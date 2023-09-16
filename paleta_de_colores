@@ -1,0 +1,57 @@
+/* CSS HEX 
+--chelsea-cucumber: #95a34e;
+--woodland: #41512a;
+--dallas: #714c26;
+--beryl-green: #dee3c4;
+--locust: #aab089;
+--siam: #636e54;
+--pine-glade: #ccd09a;
+--pine-glade: #c4d497;
+--chalet-green: #546c3c;
+
+
+/* SCSS HEX 
+$chelsea-cucumber: #95a34e;
+$woodland: #41512a;
+$dallas: #714c26;
+$beryl-green: #dee3c4;
+$locust: #aab089;
+$siam: #636e54;
+$pine-glade: #ccd09a;
+$pine-glade: #c4d497;
+$chalet-green: #546c3c;
+
+
+/* SCSS RGB 
+--chelsea-cucumber: rgba(149,163,78,1);
+--woodland: rgba(65,81,42,1);
+--dallas: rgba(113,76,38,1);
+--beryl-green: rgba(222,227,196,1);
+--locust: rgba(170,176,137,1);
+--siam: rgba(99,110,84,1);
+--pine-glade: rgba(204,208,154,1);
+--pine-glade: rgba(196,212,151,1);
+--chalet-green: rgba(84,108,60,1);
+*/
+
+.colores_paleta{color:#95a34e}
+.colores_paleta{color:#41512a}
+.colores_paleta{color:#714c26}
+.colores_paleta{color:#dee3c4}
+.colores_paleta{color:#aab089}
+.colores_paleta{color:#636e54}
+.colores_paleta{color:#ccd09a}
+.colores_paleta{color:#c4d497}
+.colores_paleta{color: #546c3c}
+
+
+
+/* notas metodo de pago:
+
+1:credito y debito,
+2:PSE,
+3:punto en efecty,
+4:Pago contraentrega
+
+necesita 
+producto ,pesio y descricion,IMAGEN */

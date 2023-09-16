@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+header{
+    width: 100%;
+    height: 700px;
+    background-image: url(img/0.jpg);
+    background-size: cover;
+    opacity: 90%;
+    background-attachment: fixed ;
+    /* position: relative; */
+}
+
+.navegador{
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 2000ms;
+    padding: 10px;
+}
+
+.navegadorAbajo{
+    /* background-color: #6fa622; */
+    background-color: rgba(0, 0, 0, 0.932);
+}
+
+.navegador h1 {
+    margin-left: 20px;
+    color: white;
+}
+.navegador a{
+    text-decoration: none;
+}
+.navegador .color_0{
+    color: #41512a;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+
+
+
+
+ul li{
+    display: inline-block;
+  
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 30px;  
+    transition: color 1000ms;
+}
+
+.aabajo{
+    color: #fff;
+}
+
+nav a:hover{
+    color: rgb(0, 255, 89);
+}
+
+
+
+
+.imagen_encabezado img{
+
+    width: 100%;
+    height: 650px;
+
+}
+
+
+.footer_abajo .color_0{
+    color: #41512a;
+    
+}
+
+
+.footer_abajo{
+    background-color: rgb(255, 255, 255);
+}
+
+footer{
+    padding: 50px;
+    background-color: rgb(0, 0, 0);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+footer h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+footer p a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.informacion{
+    display: flex;
+    justify-content: space-between;
+    margin: 0% 30%;
+}
+
+
+.logos{
+    display: flex;
+    justify-content: space-between;
+    margin: 0% 40%;
+    margin-top: 15px;
+}
+
+.logos img{
+    width: 20px;
+}
+
+
+
+
+
+
+
+.contenedor_productos{
+    display: flex;
+    justify-content: center;
+    
+    
+    /* background-color: rgb(170,148,98); */
+}
+
+
+.contenido_caja{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px 50px;  
+}
+
+
+
+.contenido_caja img{
+    display: flex;
+    width: 300px;
+}
+
+.contenido_caja h1{
+    display: flex;
+    /* justify-content: center; */
+}
+
+.contenido_caja p{
+    display: flex;
+    
+    justify-content: center;
+   
+}
+
+
+.contenido_caja .contenido_texto{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bts_t{
+    display: flex;
+    flex-direction: column;
+}
+
+.bts_t button{
+    border: none;
+    padding: 7px 0 ;
+    border-radius: 5px;
+} 
+
+
+
+.bts_t .btn_conoceMas{
+    margin-bottom: 4px;
+    background-color: white;
+    border: 1px solid black;
+    /* color: black; */
+}  
+
+.bts_t .btn_carrito{
+    background-color: #6fa622;
+    color: white;
+}
+
+.bts_t .btn_carrito:hover{
+    background-color: #537f14;
+}
+
+
+
+
+
+/* .imagen_encabezado{
+
+} */
+/*
+todo esta para abajo es el codigo para el registrado y iniado de la pagina web y esta en orden tal cual se muestra en codigo
+html 
+*/
+.body_register_iniciar{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/campo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+.contenedor_register_iniciar{
+    width: 90px;
+    padding: 2rem 12rem;
+    background-color: rgba(51, 51, 51, 0.845);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; 
+    position: relative; 
+}
+
+.logoo{
+    width: 300px;
+    height: 150px;
+    margin-bottom: 10px;    
+}
+
+.register_iniciar_sesion{
+    color: #6fa622;
+    margin: 8px 0px 30px 0px;    
+}
+
+
+.contenedor_input input{
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent; /* Hace que el fondo del campo de entrada de texto sea transparente */
+    color: #fff; /* Cambia el color del texto dentro del campo de entrada de texto */  
+    outline: none;
+    border:none;
+    border-bottom: 1px solid ; 
+    margin-bottom: 17px;
+}
+
+.body_register_iniciar button{
+    margin-top: 5px;
+    padding: 3px 83px 3px 83px;
+    border: none;
+    /*padding-left: 83px;
+    padding-right: 83px;*/
+    background-color: #33a715;
+    border-radius: 7px;
+    color: white; 
+    cursor: pointer;
+}
+
+.body_register_iniciar button:hover{
+    /* background-color: #6fa622; */
+    background-color: #39bd18;
+    
+}
+
+.pregunta{
+    margin-top: 50PX;
+    color: #B9BDB8
+    
+}
+
+.sub_pregunta{
+    text-decoration: none;
+    color: #95a34e;
+}
+
+
+.sub_pregunta:hover{
+    color: #aabf44;
+}
+
+
+
+
+
+
