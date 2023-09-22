@@ -70,8 +70,18 @@ nav a:hover{
 .conterImg{
     height: 800px;
     width: 100%;
-    background-color:white;
+    /* background-color:white; */
     color: blue;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
+.contedor{
+    width: 98%;
+    height: 90%;
+    background-color: black;
 
 }
 
