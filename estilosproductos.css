@@ -71,18 +71,60 @@ nav a:hover{
     height: 800px;
     width: 100%;
     /* background-color:white; */
-    color: blue;
+    color:n black;
     display: flex;
     justify-content:center;
-    align-items: center;
+    /* align-items: center; */
+    text-align: center;
 }
 
 
 .contedor{
-    width: 98%;
-    height: 90%;
-    background-color: black;
+    width: 90%;
+    height: 70vh;
+    background-color: rgb(228, 191, 191);
+    margin-top: 5vh;
+    
+
 
 }
+
+.caja {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 30px 60px;  
+    
+
+}
+
+.caja h1{
+    display: flex;
+}
+
+.caja p{
+    display: flex;
+    justify-content:right;
+
+}
+
+.texto .caja{
+    background-color: aquamarine;
+    display: flex;
+    justify-content:space-between;
+    
+
+    
+
+}
+
+
+img {
+    height:40vh ;
+    width:30vh ;
+}
+
+
+
 
 
