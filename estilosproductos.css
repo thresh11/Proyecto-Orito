@@ -101,7 +101,16 @@ nav a:hover{
 
 }
 
-.caja h1{
+
+.texto{
+    background-color: aquamarine;
+    display: flex;
+    justify-content:space-between;
+    align-items: center; 
+    
+}
+    
+/* .caja h1{
     display: flex;
 }
 
@@ -109,18 +118,10 @@ nav a:hover{
     display: flex;
     justify-content:right;
 
-}
+} */
 
-.texto .caja{
-    background-color: aquamarine;
-    display: flex;
-    justify-content:space-between;
-    
 
     
-
-}
-
 
 img {
     height:40vh ;
