@@ -82,30 +82,24 @@ nav a:hover{
 
 
 .conterImg__filtro{
-    background-color: black;
+    /* background-color: black; */
     height:25vh ;
     width: 25vw;
     margin-left:0vw ;
 }
 
-.pro{
-    /* background-color: black;
-    height: 100%; */
-
-    margin-top: 5vh;
-    
-
-}
 
 
-.pro__contedor1, .pro__contedor2 {
+
+#pro__contedor {
     width: 75vw;
-    height: 75vh;
+    /* height: 75vh; */
     /* background-color: rgb(33, 41, 138);    */
     display: flex;
-    justify-content:center;
+    flex-wrap: wrap;
+    
     /* align-items: center; */
-    text-align: center;
+    
     
 
     
@@ -113,11 +107,13 @@ nav a:hover{
 
 }
 
-.pro__contedor__caja {
+.pro__contedor__caja{
         border: 1px solid black;
         border-radius: 20px;
         padding: 20px;
         margin: 30px 20px;  
+        
+    
     
 
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transición de Aparición</title>
+    <style>
+        /* Estilo base para el elemento */
+        .elemento {
+            opacity: 0; /* Inicialmente, el elemento está oculto */
+            transition: opacity 1s; /* Transición de 1 segundo */
+        }
+
+        /* Estilo para mostrar el elemento */
+        .elemento.mostrar {
+            opacity: 1; /* Cambia la opacidad a 1 para mostrar el elemento */
+        }
+    </style>
+</head>
+<body>
+    <h1>Transición de Aparición</h1>
+    <button id="mostrarBoton">Mostrar Elemento</button>
+    <div class="elemento">Este es el elemento que aparecerá con una transición.</div>
+
+    <script>
+        const mostrarBoton = document.getElementById("mostrarBoton");
+        const elemento = document.querySelector(".elemento");
+
+        mostrarBoton.addEventListener("click", () => {
+            elemento.classList.add("mostrar"); // Agrega la clase para mostrar el elemento
+        });
+    </script>
+</body>
+</html>

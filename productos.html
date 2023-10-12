@@ -6,7 +6,7 @@
     <title>productos</title>
     <link rel="stylesheet" href="estilosproductos.css">
   
-    <script defer src="script.js"></script>
+    <script defer src="scrit_productos.js"></script>
 </head>
 <body>
     <header>
@@ -28,19 +28,26 @@
 
     <section class="conterImg">
 
-        <div class="conterImg__filtro"></div>
+        <div class="conterImg__filtro">
+            <input type="radio" name="categoria" value="todos" id="todosRadio" checked> Todos<br>
+            <input type="radio" name="categoria" value="brauni" id="brauniRadio"> braunis<br>
+            <input type="radio" name="categoria" value="combo" id="comboRadio"> combos<br>
+            <input type="radio" name="categoria" value="oferta" id="ofertaRadio"> oferta 
+           
+
+        </div>
 
         <div clas="pro">
          
-            <div class="pro__contedor1">
+            <div id="pro__contedor">
 
 
-                <div class="pro__contedor__caja">
+                <div class="pro__contedor__caja combo">
                     
 
                     <img src="img/miel.png" alt="">
                     <div class="texto">
-                        <h1> Miel </h1><p> $5.000</p>
+                        <h1> combo</h1><p> $5.000</p>
                     </div>
 
                     <div class="conteImg__contenedor-caja-button">
@@ -50,13 +57,10 @@
                     
                 </div>
 
-
-            
-
-                <div class="pro__contedor__caja">
+                <div class="pro__contedor__caja brauni">
                     <img src="img/miel.png" alt="">
                     <div class="texto">
-                        <h1> Miel </h1><p> $5.000</p>
+                        <h1> brauni </h1><p> $5.000</p>
                     </div>
 
                     <div class="conteImg__contenedor-caja-button">
@@ -67,15 +71,10 @@
                     
                 </div>
 
-
-            
-
-
-            
-                <div class="pro__contedor__caja">
+                <div class="pro__contedor__caja brauni">
                     <img src="img/miel.png" alt="">
                     <div class="texto">
-                        <h1> Miel </h1><p> $5.000</p>
+                        <h1> brauni</h1><p> $5.000</p>
                     </div>
 
                     <div class="conteImg__contenedor-caja-button">
@@ -86,23 +85,12 @@
                 
                 </div>
 
-
-      
-                
-        
-
-
-            </div>
-
-            <div class="pro__contedor1">
-
-
-                <div class="pro__contedor__caja">
+                <div class="pro__contedor__caja combo">
                     
 
                     <img src="img/miel.png" alt="">
                     <div class="texto">
-                        <h1> Miel </h1><p> $5.000</p>
+                        <h1> combo </h1><p> $5.000</p>
                     </div>
 
                     <div class="conteImg__contenedor-caja-button">
@@ -112,13 +100,10 @@
                     
                 </div>
 
-
-            
-
-                <div class="pro__contedor__caja">
+                <div class="pro__contedor__caja oferta">
                     <img src="img/miel.png" alt="">
                     <div class="texto">
-                        <h1> Miel </h1><p> $5.000</p>
+                        <h1> oferta </h1><p> $5.000</p>
                     </div>
 
                     <div class="conteImg__contenedor-caja-button">
@@ -129,15 +114,11 @@
                     
                 </div>
 
-
             
-
-
-            
-                <div class="pro__contedor__caja">
+                <div class="pro__contedor__caja oferta">
                     <img src="img/miel.png" alt="">
                     <div class="texto">
-                        <h1> Miel </h1><p> $5.000</p>
+                        <h1> oferta </h1><p> $5.000</p>
                     </div>
 
                     <div class="conteImg__contenedor-caja-button">

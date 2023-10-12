@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedores de Colores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50vw;
+
+            background-color: black;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 18px;
+          
+        }
+
+        .azul { background-color: blue; color: white; }
+        .rojo { background-color: red; color: white; }
+        .verde { background-color: green; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Contenedores de Colores</h1>
+
+    <input type="radio" name="categoria" value="azul" id="azulRadio"> Azul
+    <input type="radio" name="categoria" value="rojo" id="rojoRadio"> Rojo
+    <input type="radio" name="categoria" value="verde" id="verdeRadio"> Verde
+    <input type="radio" name="categoria" value="todos" id="todosRadio" checked> Todos
+
+    <div id="container">
+        <div class="box verde">Verde 3</div>
+        <div class="box azul">Azul 1</div>
+        <div class="box azul">Azul 2</div>
+        <div class="box azul">Azul 3</div>
+        <div class="box rojo">Rojo 1</div>
+        <div class="box rojo">Rojo 2</div>
+        <div class="box rojo">Rojo 3</div>
+        <div class="box verde">Verde 1</div>
+        <div class="box verde">Verde 2</div>
+       
+    </div>
+
+    <script>
+        const azulRadio = document.getElementById("azulRadio");
+        const rojoRadio = document.getElementById("rojoRadio");
+        const verdeRadio = document.getElementById("verdeRadio");
+        const todosRadio = document.getElementById("todosRadio");
+
+        const contenedores = document.querySelectorAll(".box");
+
+        azulRadio.addEventListener("change", () => {
+            if (azulRadio.checked) {
+                filterBoxes("azul");
+            }
+        });
+
+        rojoRadio.addEventListener("change", () => {
+            if (rojoRadio.checked) {
+                filterBoxes("rojo");
+            }
+        });
+
+        verdeRadio.addEventListener("change", () => {
+            if (verdeRadio.checked) {
+                filterBoxes("verde");
+            }
+        });
+
+        todosRadio.addEventListener("change", () => {
+            if (todosRadio.checked) {
+                filterBoxes("todos");
+            }
+        });
+
+        function filterBoxes(categoria) {
+            contenedores.forEach((box) => {
+                if (categoria === "todos" || box.classList.contains(categoria)) {
+                    box.style.display = "block";
+                } else {
+                    box.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
