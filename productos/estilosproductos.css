@@ -82,13 +82,33 @@ nav a:hover{
     height:200vh ;
     width: 25vw;
     margin-left:0vw ;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
+
+
 .pro__contedor__busqueda{
-    width: 70vw;
+    width: 98vw;
     height: 10vh;
-    background-color: #fff;
+    background-color: #e01212;
+    border: 1px solid black;
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+
+  .pro__contedor__busqueda-box {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 3vw;
+
+  }
 
 
 
@@ -97,10 +117,10 @@ nav a:hover{
 #pro__contedor {
     width: 70vw;
     /* height: 75vh; */
-    /* background-color: rgb(33, 41, 138);    */
+    background-color: rgb(33, 41, 138);   
     display: flex;
     flex-wrap: wrap;
-    margin-left: 25vw;
+    margin-left: 28vw;
     
     /* align-items: center; */
     
@@ -111,8 +131,8 @@ nav a:hover{
     margin-left: 13px;
     /* transition: transform 0.2s; */
 }
-
-/* [alt="foto"]:hover{
+/* 
+[alt="foto"]:hover{
     transform: scale(1.1);
 
 } */
