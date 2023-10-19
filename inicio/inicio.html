@@ -10,6 +10,8 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body>
     <header>
@@ -18,11 +20,24 @@
 
                 <nav>
                     <ul>
-                        <li><a href="inicio.html">Inicio</a></li>
-                        <li><a href="../sobrenosotros.html">Sobre nosotros</a></li>
-                        <li><a href="../productos/productos.html">productos</a></li>
-                        <li><a href="../iniciar_registrar/registrar.html">registar</a></li>
+                        <div class="desaparecer">
+                            <li><a href="inicio.html">Inicio</a></li>
+                            <li><a href="../sobrenosotros.html">Sobre nosotros</a></li>
+                            <li><a href="../productos/productos.html">productos</a></li>
+                            <li><a href="../iniciar_registrar/registrar.html">registar</a></li>
+                        </div>
+                            <li class="icon_menu">
+                                <a href="#"><span class="material-symbols-outlined" id="tamaño">menu</span></a>
+                                    <ul class="contenido_vertical">
+                                        <li><a href="#">servicios</a></li>
+                                        <li><a href="#">productos</a></li>
+                                        <li><a href="#">guarderia</a></li>
+                                        <li><a href="#">promiciones</a></li>
+                                    </ul>
+                            </li>
                     </ul>
+
+                    
                         <div class="header-section container">
                             <img onclick="verCarrito(this)" class="cart" src="../img/carrito.png" alt="carrito">
                             <p class="count-product">0</p>
@@ -38,7 +53,13 @@
                 </nav>
         </div>     
     </header>
-<!-- Slider main container -->
+
+<div class="barra">
+    
+</div>
+<section>
+    <div class="carrusel">
+        <!-- Slider main container -->
 <div class="swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
@@ -58,6 +79,9 @@
     <!-- If we need scrollbar -->
     <!-- <div class="swiper-scrollbar"></div> -->
     </div>
+    </div>
+</section>
+
     <section class="container">
         <div class="products">
             <div class="carta">
