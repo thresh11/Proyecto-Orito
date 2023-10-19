@@ -6,6 +6,10 @@
     <title>orito verde</title>
     <link rel="stylesheet" href="inicio.css">
     <script defer src="inicio.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 </head>
 <body>
     <header>
@@ -34,7 +38,26 @@
                 </nav>
         </div>     
     </header>
-
+<!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="../img/aguacate-1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="../img/0.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="../img/aguacate-2.jpg" alt=""></div>
+    
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
     <section class="container">
         <div class="products">
             <div class="carta">
@@ -84,5 +107,6 @@
                     </div>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </body>
 </html>
