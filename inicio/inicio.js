@@ -17,8 +17,6 @@ const cerrarCarrito = () => document.getElementById("products-id").style.display
 
 
 
-
-
 let allContainerCart = document.querySelector('.products');
 let containerBuyCart = document.querySelector('.card-items');
 let priceTotal = document.querySelector('.precio-total')
@@ -127,6 +125,9 @@ function loadHtml() {
 function clearHtml() {
     containerBuyCart.innerHTML = '';
 }
+
+
+
 
 
 const swiper = new Swiper('.swiper', {
