@@ -1,0 +1,279 @@
+*{margin: 0; padding: 0; box-sizing: border-box;font-family: sans-serif;}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    background-size: cover;
+   position: relative;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+section{
+    z-index: 0;
+    background-color: rgb(255, 248, 248);
+    background-size: cover;
+    width: 80%;
+    height: 90%;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+.info{ 
+    margin-top: 100px;
+    margin-left: 500px;
+    font-size: 15px
+}
+.titulo_info{
+    font-size: 20px;
+    
+}
+.titulo_info{
+    text-align: center;
+    font-size: 28PX;
+    margin-top: -100px;
+    color: rgb(0, 0, 0);
+}
+button{
+    position: absolute;
+    margin-left: 450px;
+    margin-top: -70px;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    background-color: black;
+    border: 2px solid rgb(0, 255, 221);
+}
+button a {
+    color: white;
+    text-decoration: none;
+  
+}
+ul li{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(66, 65, 65);
+}
+ul li {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.container{
+    padding: 2rem ;
+}
+.slider-wrapper{
+   
+    position: absolute;
+    width: 500px;
+    height: 420px;
+   margin-top: 50px;
+   margin-left: -20px;
+    
+}
+.slider{
+    border: 3px solid black;
+     display: flex;
+     aspect-ratio: 13/9;
+     overflow: auto;
+     scroll-snap-type: mandatory;
+     scroll-behavior: smooth;
+     box-shadow: 0 1.5rem 3 rem -0.75 hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+}
+.slider img{
+    
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+
+}
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+   
+    z-index: 1;
+}
+.slider-nav a{
+    width: 50px;
+    height: 50px;
+    transition: opacity ease 250ms;
+}
+.slider-nav img{
+  margin-left: -100px;
+  width: 70px ;
+  height: 60px ;
+  border: 3px solid #040404;
+}
+#myForm{
+  position: absolute;
+  margin-top: -300px;
+}
+.img_boton{
+    position: absolute;
+    height: 30px ;
+    width: 30px ;
+    margin-left: -500px;
+    margin-top: -110px;
+}
+.formul {
+    width: 500px;
+    height: 200px;
+    border: 2px #ffffff solid;
+  }
+  
+  input[type="text"] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    background-color: #ffffff;
+    border: #fff 1px solid;
+    width: 300px;
+    height: 30px;
+    color: black;
+  }
+  
+  input[type="email"] {
+    background-color: #ffffff;
+    border: #fff 1px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    width: 300px;
+    height: 30px;
+   color: #000000;
+  }
+  
+  input::placeholder {
+    color: #fff;
+  }
+  
+  .textareax {
+    background-color: #ffecec;
+    color: #000000;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: #fff 1px solid;
+    width: 300px;
+    height: 30px;
+   
+  }
+  
+  textarea::placeholder {
+    color: #fff;
+  }
+  
+  input[type="submit"] {
+    background-color: green;
+    padding: 5px;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+   height: 40px;
+    display: flex;
+    width: 90px ;
+   font-size: 15px;
+   
+  }
+  input[type="submit"]:hover {
+     background-color: aqua;
+  }
+  .boton-conta{
+    margin-top: 200px ;
+  }
+  .butt {
+    background-image: url(img/icono.pnj.jpg);
+    border: none;
+    border-radius: 40%;
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  .but {
+    background-image: url(img/barley-field-1684052_1280.jpg);
+    background-size: 170%;
+    width: 400px;
+    padding: 30px;
+    border: 5px #fff solid;
+    border-radius: 40px;
+    transition: all 500ms ease;
+  }
+  
+  input {
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  
+  label {
+    font-size: 20px;
+  }
+  
+  
+  .boton-conta {
+   position: absolute;
+   z-index: 5;
+  }
+  .batum1{
+    margin-left: 10px;
+    margin-top: -180px;
+   width: 505px;
+   
+  }
+  .botan{
+    margin-top: 300px;
+  }
+  
+  .batum3{
+   width: 400px;
+   margin-left: 115px;
+   margin-top: -240px;
+  }
+  input[type="number"] { 
+    position: absolute;
+    color: black;
+    margin-top: -240px;
+    margin-left: 10px;
+    width: 95px;
+    height: 50px;
+  }
+  .Ventana{
+    background-color: aqua;
+    width: 500px;
+    color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 30px;
+    height: 200px;
+    border-radius: 22px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    display: none;
+    margin-left: 270px;
+    padding: 20px;
+  
+  
+  }
+  .cerrar{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .image{
+    width: 25px;
+    height: 25px;
+
+  }
+
+ 
