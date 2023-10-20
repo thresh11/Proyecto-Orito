@@ -79,28 +79,76 @@ nav a:hover{
 
 .conterImg__filtro{
     background-color:white;
-    height:200vh ;
+    height:90vh ;
     width: 25vw;
     margin-left:0vw ;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+    
+    
 }
+
+
+
+
 
 .pro__contedor__busqueda{
-    width: 70vw;
-    height: 10vh;
-    background-color: #fff;
+    width: 98vw;
+    /* height: 10vh; */
+    background-color: #e01212;
+    border: 1px solid black;
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    /* display: inline-block; */
+    
+    
+}
+
+
+.pro__contedor__busqueda_verde{
+
+    width: 65vw;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 3vw;
+    /* height: 30vh; */
+}
+
+.pro__contedor__busqueda-box {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+
+
 }
 
 
 
-
+  #contenedor{
+    width: 70vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #6fa622;
+  }
 
 #pro__contedor {
     width: 70vw;
     /* height: 75vh; */
-    /* background-color: rgb(33, 41, 138);    */
+    background-color: rgb(33, 41, 138);   
     display: flex;
     flex-wrap: wrap;
-    margin-left: 25vw;
+    margin-left: 0vw;
+    position: absolute;
+    transition: top 0.3s;
     
     /* align-items: center; */
     
@@ -111,8 +159,8 @@ nav a:hover{
     margin-left: 13px;
     /* transition: transform 0.2s; */
 }
-
-/* [alt="foto"]:hover{
+/* 
+[alt="foto"]:hover{
     transform: scale(1.1);
 
 } */
