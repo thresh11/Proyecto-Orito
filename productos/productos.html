@@ -14,7 +14,7 @@
             <nav>
                 <ul>
                     <li><a href="../inicio/inicio.html">Inicio</a></li>
-                    <li><a href="#">sobre nosotros</a></li>
+                    <li><a href="../sobre nosotros/sobrenosotros.html">sobre nosotros</a></li>
                     <li><a href="productos.html">productos</a></li>
                     <li><a href="../iniciar_registrar/registrar.html">registar</a></li>
                 </ul>
@@ -32,20 +32,23 @@
             <div class="conterImg__filtro">
             
                 <img class="conterImg__filtro__img" src="../img/logo.jpeg" alt=""><br>
-                <input type="radio" name="categoria" value="todos" id="todosRadio" checked> Todos<br>
-                <input type="radio" name="categoria" value="brauni" id="brauniRadio"> braunis<br>
-                <input type="radio" name="categoria" value="combo" id="comboRadio"> combos<br>
-                <input type="radio" name="categoria" value="oferta" id="ofertaRadio"> oferta 
+                <input type="checkbox" name="categoria" value="todos" id="todosRadio" checked> Todos<br>
+                <input type="checkbox" name="categoria" value="brauni" id="brauniRadio"> braunis<br>
+                <input type="checkbox" name="categoria" value="combo" id="comboRadio"> combos<br>
+                <input type="checkbox" name="categoria" value="oferta" id="ofertaRadio"> oferta 
             </div>
 
-            <div>
-
-                <input type="text" class="pro__contedor__busqueda-box" placeholder="Buscar...">
-            </div>
-    </section>
+  
     
+  <div id="contenedor">
+    <div class="pro__contedor__busqueda_verde">
 
-    <section id="pro__contedor">
+        <input type="text" class="pro__contedor__busqueda-box" placeholder="Buscar...">
+    </div>
+        <section id="pro__contedor">
+
+
+
                 <div class="pro__contedor__caja combo">
 
                     <img src="../img/brawni_almendras2-removebg-preview1.png" alt="foto" onmouseover="cambiarImagen(this)" onmouseout="restaurarImagen(this)">
@@ -209,8 +212,8 @@
                 
                 
                 
-                
-            
+            </section>
+        </div>
         
     </section>
 

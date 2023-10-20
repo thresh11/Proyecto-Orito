@@ -13,6 +13,10 @@ window.addEventListener('scroll', function () {
 
 
 
+
+//filtro
+
+
 const todosRadio = document.getElementById("todosRadio");
 const brauniRadio = document.getElementById("brauniRadio");
 const comboRadio = document.getElementById("comboRadio");
@@ -56,6 +60,8 @@ function filterBoxes(categoria) {
 
 
 
+//cambio imagen
+
   function cambiarImagen(imagen) {
             imagen.src = "../img/almendras.jpg";
         }
@@ -63,3 +69,41 @@ function filterBoxes(categoria) {
         function restaurarImagen(imagen) {
             imagen.src = "../img/brawni_almendras2-removebg-preview1.png";
         }
+
+
+
+
+
+        // DESLIZAR
+
+
+        const contenedor = document.getElementById('contenedor');
+        const cajas = document.getElementById('pro__contedor');
+        let desplazamiento = 0;
+
+        function deslizarArriba() {
+            if (desplazamiento < 0) {
+                desplazamiento += 60;
+                cajas.style.top = desplazamiento + 'px';
+            }
+        }
+
+        function deslizarAbajo() {
+            const alturaContenedor = contenedor.clientHeight;
+            const alturaCajas = cajas.clientHeight;
+
+            if (alturaCajas + desplazamiento > alturaContenedor) {
+                desplazamiento -= 60;
+                cajas.style.top = desplazamiento + 'px';
+            }
+        }
+
+        window.addEventListener('load', () => {
+            contenedor.addEventListener('wheel', (event) => {
+                if (event.deltaY < 0) {
+                    deslizarArriba();
+                } else {
+                    deslizarAbajo();
+                }
+            });
+        });
