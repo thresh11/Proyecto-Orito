@@ -39,8 +39,10 @@ $conex;
              <div class="boton-conta">
                 <button class="butt" onclick="myFunction()"></button> 
                 <form id="myForm" style="display:none;" class="but" action="from.php" method="post" > 
+                <br>
                 <h1>Formulario</h1>
-          
+                <br>
+                  
                   <label for="Nombre">Nombre:</label>
                   <input type="text" name="Nombre" required><br>
           
@@ -57,10 +59,7 @@ $conex;
                 </form>
                 </div>
           
-
-
-          
-             <br>
+            <br>
              <div class="info_pro">
              <h1 class="saber">¡Lo que tienes que saber de este producto!</h1><br>
              <p>Lleva esta increíble promoción de ¡AÑO NUEVOO! Que te ayudara a fortalecer tu cabello, aportando vitalidad y volumen, además de fortalecer tus uñas y cuidar tu piel,  productos 100% Naturales, Compra 2 Biotina Mountain 10.000Mcg x 100 caps y lleva completamente GRATIS 1 Colágeno en Polvo Biotti</p>
