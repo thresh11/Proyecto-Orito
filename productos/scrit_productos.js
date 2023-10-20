@@ -71,8 +71,8 @@ function filterBoxes(categoria) {
         // DESLIZAR
 
 
-        const contenedor = document.getElementById('pro__contedor__busqueda');
-        const cajas = document.getElementById('pro__contedor__caja');
+        const contenedor = document.getElementById('contenedor');
+        const cajas = document.getElementById('pro__contedor');
         let desplazamiento = 0;
 
         function deslizarArriba() {

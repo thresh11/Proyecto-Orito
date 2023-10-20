@@ -93,10 +93,10 @@ nav a:hover{
 
 
 
-#pro__contedor__busqueda{
+.pro__contedor__busqueda{
     width: 98vw;
     /* height: 10vh; */
-    /* background-color: #e01212; */
+    background-color: #e01212;
     border: 1px solid black;
     margin-top: 5vh;
     display: flex;
@@ -116,9 +116,10 @@ nav a:hover{
     border-radius: 5px;
     outline: none;
     margin-left: 3vw;
+    /* height: 30vh; */
 }
 
-  .pro__contedor__busqueda-box {
+.pro__contedor__busqueda-box {
     width: 100%;
     padding: 15px;
     font-size: 16px;
@@ -127,19 +128,27 @@ nav a:hover{
     outline: none;
 
 
+}
+
+
+
+  #contenedor{
+    width: 70vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #6fa622;
   }
-
-
-
-
 
 #pro__contedor {
     width: 70vw;
     /* height: 75vh; */
-    /* background-color: rgb(33, 41, 138);    */
+    background-color: rgb(33, 41, 138);   
     display: flex;
     flex-wrap: wrap;
     margin-left: 0vw;
+    position: absolute;
+    transition: top 0.3s;
     
     /* align-items: center; */
     
