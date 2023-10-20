@@ -13,6 +13,10 @@ window.addEventListener('scroll', function () {
 
 
 
+
+//filtro
+
+
 const todosRadio = document.getElementById("todosRadio");
 const brauniRadio = document.getElementById("brauniRadio");
 const comboRadio = document.getElementById("comboRadio");
@@ -55,6 +59,8 @@ function filterBoxes(categoria) {
 }
 
 
+
+//cambio imagen
 
   function cambiarImagen(imagen) {
             imagen.src = "../img/almendras.jpg";
