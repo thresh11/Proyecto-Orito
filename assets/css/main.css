@@ -140,6 +140,54 @@ nav a:hover{
     
 }
 
+h1 {
+
+    text-align: center;
+}
+h2 {
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.principal {
+
+    height: 90vh;
+    width: 85vw;
+    border-color: #ffffff;
+    border-style: double;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+
+    
+    
+    
+}
+
+.primera {
+    right: 5%;
+    left: 5%;
+    margin-left: 5%;
+    height: 50vh;
+    width: 20vw;
+    border-radius: 7%;
+    
+    
+
+
+}
+ 
+
+
+.texto1 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7%;
+    margin-left: 50%;
+    left: 32%;
+    
+}
+
 
 
 

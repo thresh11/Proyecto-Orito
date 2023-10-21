@@ -13,6 +13,10 @@ window.addEventListener('scroll', function () {
 
 
 
+
+//filtro
+
+
 const todosRadio = document.getElementById("todosRadio");
 const brauniRadio = document.getElementById("brauniRadio");
 const comboRadio = document.getElementById("comboRadio");
@@ -56,6 +60,8 @@ function filterBoxes(categoria) {
 
 
 
+//cambio imagen
+
   function cambiarImagen(imagen) {
             imagen.src = "../img/almendras.jpg";
         }
@@ -71,8 +77,8 @@ function filterBoxes(categoria) {
         // DESLIZAR
 
 
-        const contenedor = document.getElementById('pro__contedor__busqueda');
-        const cajas = document.getElementById('pro__contedor__caja');
+        const contenedor = document.getElementById('contenedor');
+        const cajas = document.getElementById('pro__contedor');
         let desplazamiento = 0;
 
         function deslizarArriba() {
