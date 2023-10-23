@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .div-oculto {
+      display: none;
+    }
+    .ha{
+        display: flex;
+        flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Aparecer y desaparecer divs</h1>
+<div class="ha">
+  <button onclick="mostrarDiv(1)">Mostrar Div 1</button>
+  <div id="div-1" class="div-oculto">
+    <h2>Div 1</h2>
+    <p>Este es el contenido del Div 1.</p>
+  </div>
+  <button onclick="mostrarDiv(2)">Mostrar Div 2</button>
+
+  <div id="div-2" class="div-oculto">
+    <h2>Div 2</h2>
+    <p>Este es el contenido del Div 2.</p>
+  </div>
+
+  <button onclick="mostrarDiv(3)">Mostrar Div 3</button>
+  <div id="div-3" class="div-oculto">
+    <h2>Div 3</h2>
+    <p>Este es el contenido del Div 3.</p>
+  </div>
+
+  <button onclick="mostrarDiv(4)">Mostrar Div 4</button>
+  <div id="div-4" class="div-oculto">
+    <h2>Div 4</h2>
+    <p>Este es el contenido del Div 4.</p>
+  </div>
+  <button onclick="mostrarDiv(5)">Mostrar Div 5</button>
+</div>
+
+<div id="div-5" class="div-oculto">
+    <h2>Div 5</h2>
+    <p>Este es el contenido del Div 5.</p>
+  </div>
+ 
+
+ 
+
+
+
+
+
+  <script>
+    function mostrarDiv(numero) {
+      var div = document.getElementById("div-" + numero);
+      if (div.style.display === "none") {
+        div.style.display = "block";
+      } else {
+        div.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

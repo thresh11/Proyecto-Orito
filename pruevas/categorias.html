@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .red {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box green"></div>
+    <div class="box green"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+    <div class="box blue"></div>
+    <div class="box blue"></div>
+    <div class="box red"></div>
+    <div class="box red"></div>
+    <div class="box red"></div>
+  </div>
+
+  <div class="container">
+    <button id="colorBtn">Colores</button>
+    <button id="formaBtn">Formas</button>
+  </div>
+
+  <div class="container">
+    <div id="colorFilter">
+      <label for="greenCheck">Verde</label>
+      <input type="checkbox" id="greenCheck">
+      <label for="blueCheck">Azul</label>
+      <input type="checkbox" id="blueCheck">
+      <label for="redCheck">Rojo</label>
+      <input type="checkbox" id="redCheck">
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("colorBtn").addEventListener("click", function() {
+      document.getElementById("colorFilter").style.display = "block";
+    });
+
+    document.getElementById("formaBtn").addEventListener("click", function() {
+      document.getElementById("colorFilter").style.display = "none";
+    });
+
+    const checkboxes = document.querySelectorAll("input[type=checkbox]");
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener("change", function() {
+        const color = checkbox.id.replace("Check", "");
+        const divs = document.querySelectorAll("." + color);
+        divs.forEach(function(div) {
+          div.style.display = checkbox.checked ? "block" : "none";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
