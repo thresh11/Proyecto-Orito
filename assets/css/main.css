@@ -133,7 +133,7 @@ nav a:hover{
 .fondo {
 
     font-size:medium;
-    background-color: #d1ff96;
+    background-color: #ffffff;
     
     /* background-image: url(../img/Diseño\ sin\ título.png) */
     
@@ -143,37 +143,32 @@ nav a:hover{
 h1 {
 
     text-align: center;
+    padding: 5rem;
 }
 h2 {
     text-overflow: ellipsis;
+    padding: 5rem;
     text-align: center;
-}
-
-.principal {
-
-    height: 90vh;
-    width: 85vw;
-    border-color: #ffffff;
-    border-style: double;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-
-    
-    
     
 }
+
 
 .primera {
     right: 5%;
-    left: 5%;
-    margin-left: 5%;
-    height: 50vh;
-    width: 20vw;
-    border-radius: 7%;
-    
-    
+    left: 15%;
+    margin-top: 6%;
+    margin-left: -5%;
+    height: 60vh;
+    width: auto;
+    border-radius: 2rem;
+    -webkit-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
+    -moz-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
+    box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
 
-
+}
+.p{
+    padding-left: 2rem;
+    padding-right: 4rem;
 }
  
 
@@ -182,10 +177,27 @@ h2 {
     font-family:Arial, Helvetica, sans-serif;
     font-size: large;
     background-color: rgb(255, 255, 255);
-    border-radius: 7%;
-    margin-left: 50%;
-    left: 32%;
+    border-radius: 1rem;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    display: flex;
+    text-align: start;
+    height: 60vh;
+    width: 60vh;
+    border-radius: 1rem;
+    -webkit-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
+    -moz-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
+    box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
     
+    
+}
+
+.q{
+    display: flex;
+    padding-bottom: 10rem;
+    margin-left: 25%;
+
 }
 
 
