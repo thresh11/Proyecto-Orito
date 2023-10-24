@@ -15,8 +15,6 @@ window.addEventListener('scroll', function () {
 const verCarrito = (x) => document.getElementById("products-id").style.display = "block";
 const cerrarCarrito = () => document.getElementById("products-id").style.display = "none"; 
 
-
-
 let allContainerCart = document.querySelector('.products');
 let containerBuyCart = document.querySelector('.card-items');
 let priceTotal = document.querySelector('.precio-total')
@@ -78,7 +76,7 @@ function readTheContent(product) {
     }
 
     totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
-    totalCard = totalCard.toFixed(2);
+    totalCard = totalCard.toFixed(3);
 
     const exist = buyThings.some(product => product.id === infoProduct.id);
     if (exist) {
@@ -111,7 +109,9 @@ function loadHtml() {
             <h5 class="cart-price">${price}$</h5>
             <h6>Cantidad: ${amount}</h6>
         </div>
-        <span class="delete-product" data-id="${id}">X</span>  
+        <span class="delete-product" data-id="${id}">X</span>
+        <a href="../carrito/carrito.html">mirar carrito</a>
+        
         `;
 
         containerBuyCart.appendChild(row);
@@ -127,7 +127,7 @@ function clearHtml() {
 }
 
 
-
+//
 
 
 const swiper = new Swiper('.swiper', {
