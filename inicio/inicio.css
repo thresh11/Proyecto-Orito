@@ -22,7 +22,11 @@ body{
     width: 100%;
     height: 90px;
 
-    background-color: #6fa622;
+    background-color: #000000;
+}
+
+.desaparecer a{
+    color: #fff;
 }
 
 .navegador{
@@ -377,9 +381,8 @@ footer p a {
 
 .swiper {
     width: 100%;
-    /* height: 300px; */
-    z-index: 1;
-     
+    height: 300px;
+    z-index: 1; 
   }
 
   .swiper-wrapper img{
@@ -390,8 +393,11 @@ footer p a {
 
 @media (min-width: 1024px) {
     .swiper-wrapper img{
-    height: 344px; 
+    height: 500px; 
   }  
+  .swiper {
+    height: 500px;  
+  }
 }
 
 .swiper .swiper-button-prev,
@@ -520,4 +526,35 @@ footer p a {
     color: #41512a;
     font-weight: bold;
 }
+
+
+.section_targeta_publicitaria{
+    display: flex;
+    justify-content: center;
+    /* background-color: #1f4404; */
+}
+
+.targeta_publicitaria{
+    width: 70%; 
+    height: 500px;
+    /* background-color: #b31414; */
+    margin: 50px 0;
+    border-radius: 40px;
+    background-image: url(../img/cartel_publisitario.png);
+
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    filter: blur(2px); 
+    /* opacity: 0.7;  */
+    position: relative;
+    /* backdrop-filter: blur(10px); */
+}
+
+.section_targeta_publicitaria p{
+
+    position: absolute;
+    margin: 13% 30%;
+    color: white; /* Cambia el color del texto para que resalte en el fondo */
+    font-size: 24px; /* Ajusta el tamaño del texto según tus preferencias */
+}
+
 

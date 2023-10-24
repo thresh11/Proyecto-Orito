@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #container {
+            height: 600vh;
+            display: flex;
+        }
+
+        #left-column {
+            width: 300px;
+            height: 100%;
+            background: #ccc;
+        }
+
+        #right-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .color-box {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+        }
+
+        #blue-box {
+            width: 40vw;
+            height: 40vw;
+            background: blue;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #black-box {
+            width: 40vw;
+            height: 40vw;
+            background: black;
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="left-column">
+            <!-- Coloca tus 20 divs de diferentes colores aquí -->
+            <div class="color-box" style="background: red;"></div>
+            <div class="color-box" style="background: green;"></div>
+            <!-- Repite estos elementos con diferentes colores -->
+        </div>
+
+        <div id="right-column">
+            <div id="blue-box"></div>
+        </div>
+    </div>
+
+    <script>
+        const blueBox = document.getElementById('blue-box');
+        const blackBox = document.getElementById('black-box');
+        let isMovingRight = true;
+
+        // Mover el div azul hacia la derecha
+        function moveBlueBoxRight() {
+            const currentPosition = blueBox.getBoundingClientRect().left;
+            if (currentPosition < window.innerWidth) {
+                blueBox.style.left = currentPosition + 1 + 'px';
+                requestAnimationFrame(moveBlueBoxRight);
+            } else {
+                isMovingRight = false;
+                requestAnimationFrame(moveBlueBoxLeft);
+            }
+        }
+
+        // Mover el div azul hacia la izquierda
+        function moveBlueBoxLeft() {
+            const currentPosition = blueBox.getBoundingClientRect().left;
+            if (currentPosition > (window.innerWidth - blueBox.clientWidth)) {
+                blueBox.style.left = currentPosition - 1 + 'px';
+                requestAnimationFrame(moveBlueBoxLeft);
+            } else {
+                isMovingRight = true;
+                requestAnimationFrame(moveBlueBoxRight);
+            }
+        }
+
+        // Iniciar el movimiento del div azul
+        moveBlueBoxRight();
+
+        // Detectar cuando el div azul alcanza el div negro
+        window.addEventListener('scroll', () => {
+            const blueBoxPosition = blueBox.getBoundingClientRect();
+            const blackBoxPosition = blackBox.getBoundingClientRect();
+
+            if (isMovingRight && blueBoxPosition.right >= blackBoxPosition.left) {
+                blueBox.style.position = 'absolute';
+                blueBox.style.left = (blackBoxPosition.left - blueBox.clientWidth) + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
