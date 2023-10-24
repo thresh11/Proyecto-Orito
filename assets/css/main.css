@@ -65,7 +65,7 @@ nav a:hover{
 }
 
 .parrafo {
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    
     font-size: 16px;
 }
  
@@ -133,9 +133,9 @@ nav a:hover{
 .fondo {
 
     font-size:medium;
-    background-color: #d1ff96;
+    background-color: #ffffff;
     
-    /* background-image: url(../img/Diseño\ sin\ título.png) */
+    
     
     
 }
@@ -181,8 +181,8 @@ h2 {
 .texto1 {
     font-family:Arial, Helvetica, sans-serif;
     font-size: large;
-    background-color: rgb(255, 255, 255);
-    border-radius: 7%;
+    background-color: #d5fa84;
+    border-radius: 5%;
     margin-left: 50%;
     left: 32%;
     
