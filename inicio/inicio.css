@@ -496,11 +496,22 @@ footer p a {
     font-family: titulo; 
 }
 
+.titulo_3{
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-family: titulo; 
+
+}
+
 .titulooo span{
-    /* color: #1f4404; */
     color: #537f14;
 }
 .titulo_2 span{
+    color: #537f14;
+}
+
+.titulo_3 span{
     color: #537f14;
 }
 
@@ -538,7 +549,7 @@ footer p a {
     width: 70%; 
     height: 500px;
     /* background-color: #b31414; */
-    margin: 50px 0;
+    margin-bottom: 10px;
     border-radius: 40px;
     background-image: url(../img/cartel_publisitario.png);
 
@@ -550,11 +561,12 @@ footer p a {
 }
 
 .section_targeta_publicitaria p{
-
     position: absolute;
-    margin: 13% 30%;
+    /* margin: 13% 30%; */
+    margin: 12% 50% 0% 20%;
     color: white; /* Cambia el color del texto para que resalte en el fondo */
     font-size: 24px; /* Ajusta el tamaño del texto según tus preferencias */
 }
+
 
 
