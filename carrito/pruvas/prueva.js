@@ -29,23 +29,27 @@ function deleteProduct(e) {
     if (e.target.classList.contains('delete-product')) {
         const deleteId = e.target.getAttribute('data-id');
 
-        buyThings.forEach(value => {
-            if (value.id == deleteId) {
-                let priceReduce = parseFloat(value.price) * parseFloat(value.amount);
-                totalCard = totalCard - priceReduce;
-                totalCard = totalCard.toFixed(2);  
-            }
-        });
-        buyThings = buyThings.filter(product => product.id != deleteId);
+        const indexToDelete = buyThings.findIndex(product => product.id == deleteId);
+        if (indexToDelete !== -1) {
+            const productToDelete = buyThings[indexToDelete];
+            let priceReduce = parseFloat(productToDelete.price) * parseFloat(productToDelete.amount);
 
-        countProduct -- ;
+            if (productToDelete.amount > 1) {
+                productToDelete.amount--; // Reduce la cantidad en 1
+            } else {
+                buyThings.splice(indexToDelete, 1); // Elimina el producto si su cantidad es 1
+            }
+
+            countProduct--;
+        }
     }
 
     if (buyThings.length === 0) {
         priceTotal.innerHTML = 0;
         amountProduct.innerHTML = 0;
     }
-    loadHtml();
+
+    loadHtml(); // Llama a loadHtml para actualizar la interfaz y el precio total
 }
 
 
@@ -95,9 +99,10 @@ function loadHtml() {
             <h5 class="cart-price">${price}$</h5>
             <h6>Cantidad: ${amount}</h6>
         </div>
-        <span class="delete-product" data-id="${id}">X</span> 
     
-        `; 
+        
+        `;
+
         containerBuyCart.appendChild(row);
 
         totalCard += parseFloat(price) * amount; // Recalcula el precio total
@@ -112,34 +117,3 @@ function loadHtml() {
 function clearHtml() {
     containerBuyCart.innerHTML = '';
 }
-
-
-    let mimus = document.querySelector(".minus"),
-    text = document.querySelector(".text"),
-    plus = document.querySelector(".btn-agregar-carito"),
-    num = 1;
-
-    const elemento = document.querySelector(".text");
-    const obtenerValorNumero = () =>{
-        if (elemento) {
-            const valor = elemento.innerHTML;
-            return valor;
-        }
-    }
-
-
-    plus.addEventListener("click",()=>{
-        num++;
-        num = (num < 10) ? "0" + num : num;
-        text.innerHTML = num;
-       console.log(obtenerValorNumero());
-    })
-
-    mimus.addEventListener("click",()=>{
-        if (num > 0) {
-            num --;
-            num = (num < 10) ? "0" + num : num;
-            text.innerHTML = num;
-            console.log();
-            console.log(obtenerValorNumero());
-    }});
