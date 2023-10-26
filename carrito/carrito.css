@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.carta_carrito{
+    display: flex;
+}
+
+.carta_carrito img{
+   width: 5%;
+   height: auto;
+}
