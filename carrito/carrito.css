@@ -3,11 +3,17 @@ body{
     padding: 0;
 }
 
-.carta_carrito{
+.carta{
     display: flex;
+    background-color: aqua;
+    padding: 1% 0;
+    margin: 20px 5% ;
 }
 
-.carta_carrito img{
-   width: 5%;
-   height: auto;
+.carta img{
+    width: 6%;
+    height: auto;
+    object-fit: cover;
 }
+
+
