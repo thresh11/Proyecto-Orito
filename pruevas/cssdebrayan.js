@@ -13,7 +13,7 @@ window.addEventListener('scroll', function () {
 
 
 
-
+//carrito
 
 
 const verCarrito = (x) => document.getElementById("products-id").style.display = "block";
@@ -129,4 +129,8 @@ function loadHtml() {
 function clearHtml() {
     containerBuyCart.innerHTML = '';
 }
+
+
+
+
 

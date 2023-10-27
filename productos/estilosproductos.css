@@ -458,7 +458,7 @@ nav .desaparecer  li a:hover{
 .pro__contedor__busqueda{
     width: 98vw;
     /* height: 10vh; */
-    /* background-color: #e01212; */
+    background-color: #e01212;
     margin-top: 5vh;
     display: flex;
     flex-wrap: wrap;
@@ -527,13 +527,13 @@ nav .desaparecer  li a:hover{
     height: 300vh;
     overflow: hidden;
     position: relative;
-    background-color: #6fa622;
+    background-color: #a62222;
   }
 
 #pro__contedor {
     width: 69vw;
     /* height: 75vh; */
-    /* background-color: rgb(33, 41, 138);    */
+    background-color: rgb(33, 41, 138);   
    
     margin-left: 1vw;
     
