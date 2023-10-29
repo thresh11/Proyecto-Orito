@@ -240,7 +240,7 @@ jhon */
     width: 98vw;
     background-color: aqua;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 
