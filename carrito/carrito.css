@@ -3,17 +3,15 @@ body{
     padding: 0;
 }
 
-.carta{
-    display: flex;
-    background-color: aqua;
-    padding: 1% 0;
-    margin: 20px 5% ;
+.card-items img{
+    width: 10%;
+    height: auto;
 }
 
-.carta img{
-    width: 6%;
-    height: auto;
-    object-fit: cover;
+
+.todoContenido{
+    display: flex;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
 }
 
 
