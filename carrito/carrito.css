@@ -14,4 +14,15 @@ body{
     box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
 }
 
+.delete-product{
+    display: flex;
+    margin-left: 73%;
+}
 
+.item-content{
+    display: flex;
+}
+
+.aumentador{
+    display: flex;
+}
