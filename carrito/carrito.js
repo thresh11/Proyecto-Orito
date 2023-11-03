@@ -1,6 +1,3 @@
-const verCarrito = (x) => document.getElementById("products-id").style.display = "block";
-const cerrarCarrito = () => document.getElementById("products-id").style.display = "none"; 
-
 let allContainerCart = document.querySelector('.products');
 let containerBuyCart = document.querySelector('.card-items');
 let priceTotal = document.querySelector('.precio-total')
@@ -11,43 +8,38 @@ let totalCard = 0;
 let countProduct = 0;
 
 
+window.addEventListener('load', () => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        buyThings = JSON.parse(savedCart);
+        updateCart();
+    }
+});
+
 loadEventListenrs();
 function loadEventListenrs() {
-    allContainerCart.addEventListener('click', addProduct);
+    // allContainerCart.addEventListener('click', addProduct);
     containerBuyCart.addEventListener('click', deleteProduct);
 }
 
-function addProduct(e) {
-    e.preventDefault();
-    if (e.target.classList.contains('btn-agregar-carito')) {
-        const selectProduct = e.target.parentElement;
-        readTheContent(selectProduct);
-    }
-}
+// function addProduct(e) {
+//     e.preventDefault();
+//     if (e.target.classList.contains('btn-agregar-carito')) {
+//         const selectProduct = e.target.parentElement;
+//         readTheContent(selectProduct);
+//         updateCart();
+//     }
+// }
 
 function deleteProduct(e) {
     if (e.target.classList.contains('delete-product')) {
         const deleteId = e.target.getAttribute('data-id');
 
-        buyThings.forEach(value => {
-            if (value.id == deleteId) {
-                let priceReduce = parseFloat(value.price) * parseFloat(value.amount);
-                totalCard = totalCard - priceReduce;
-                totalCard = totalCard.toFixed(2);  
-            }
-        });
         buyThings = buyThings.filter(product => product.id != deleteId);
-
-        countProduct -- ;
+        countProduct--;
+        updateCart();
     }
-
-    if (buyThings.length === 0) {
-        priceTotal.innerHTML = 0;
-        amountProduct.innerHTML = 0;
-    }
-    loadHtml();
 }
-
 
 function readTheContent(product) {
     const infoProduct = {
@@ -60,48 +52,48 @@ function readTheContent(product) {
 
     totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
     totalCard = totalCard.toFixed(3);
-
     const exist = buyThings.some(product => product.id === infoProduct.id);
     if (exist) {
         const pro = buyThings.map(product => {
-            if(product.id === infoProduct.id){
+            if (product.id === infoProduct.id) {
                 product.amount++;
                 return product;
-            }else{
+            } else {
                 return product;
             }
         });
         buyThings = [...pro];
-    }else{
-        buyThings = [...buyThings,infoProduct]
-        countProduct++;
+    } else {
+        buyThings = [...buyThings, infoProduct];
     }
-    loadHtml();
+    updateCart();
 }
 
 function loadHtml() {
     clearHtml();
-
-    totalCard = 0; // Reinicia el precio total a 0 antes de recalcularlo
-
     buyThings.forEach(product => {
-        const { image, title, price, amount, id } = product;
+        const {image,title,price,amount,id} = product;
         const row = document.createElement('div');
         row.classList.add('item');
         row.innerHTML = `
+        <div class="todoContenido">
         <img src="${image}" alt="">
         <div class="item-content">
-            <h5>${title}</h5>
-            <h5 class="cart-price">${price}$</h5>
-            <h6>Cantidad: ${amount}</h6>
+            <div>
+                <h5>${title}</h5>
+                <h5 class="cart-price">${price}$</h5>
+            </div> 
+            <div class="aumentador">
+                <div class="minus">-</div>
+                <div class="text">${amount}</div>
+                <div class="btn-agregar-carito">+</div>
+            </div>
         </div>
         <span class="delete-product" data-id="${id}">X</span> 
-    
-        `; 
-        containerBuyCart.appendChild(row);
+        </div>
+        `;
 
-        totalCard += parseFloat(price) * amount; // Recalcula el precio total
-        totalCard = totalCard.toFixed(2);
+        containerBuyCart.appendChild(row);
 
         priceTotal.innerHTML = totalCard;
 
@@ -111,6 +103,17 @@ function loadHtml() {
 
 function clearHtml() {
     containerBuyCart.innerHTML = '';
+}
+
+function updateCart() {
+    loadHtml();
+    totalCard = buyThings.reduce((total, product) => total + (parseFloat(product.price) * product.amount), 0);
+    totalCard = totalCard.toFixed(3);
+    countProduct = buyThings.length;
+    
+    priceTotal.innerHTML = totalCard;
+    amountProduct.innerHTML = countProduct;
+    localStorage.setItem('cart', JSON.stringify(buyThings));
 }
 
 
