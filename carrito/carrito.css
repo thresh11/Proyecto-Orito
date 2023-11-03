@@ -8,8 +8,8 @@ body{
     height: auto;
 }
 
-.cart-products div{
-    display: flex;
+.cart-products{
+    /* display: flex; */
     /* position: absolute!important; */
     top: 82px;
     right: -18px;
@@ -21,4 +21,17 @@ body{
     /* min-width: 290px;
     margin-right: 30px; */
 }
+
+
+.item-content, .todo_contenido{
+    /* background-color: aqua; */
+    display: flex;
+}
+
+
+.header-section {
+    display: flex;
+}
+
+
 

@@ -119,13 +119,15 @@ function loadHtml() {
         const row = document.createElement('div');
         row.classList.add('item');
         row.innerHTML = `
+        <div class="todo_contenido">
         <img src="${image}" alt="">
         <div class="item-content">
             <h5>${title}</h5>
-            <h5 class="cart-price">${price}$</h5>
-            <h6>Cantidad: ${amount}</h6>
+            <h5 class="cart-price">$${price}</h5>
+            <h6>${amount}</h6>
         </div>
         <span class="delete-product" data-id="${id}">X</span> 
+        </div>
         `;
 
         containerBuyCart.appendChild(row);
@@ -135,6 +137,8 @@ function loadHtml() {
         amountProduct.innerHTML = countProduct;
     });
 }
+
+
 
 function clearHtml() {
     containerBuyCart.innerHTML = '';
