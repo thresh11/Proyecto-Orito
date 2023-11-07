@@ -22,6 +22,7 @@ header{
     align-items: center;
     transition: background-color 2000ms;
     padding: 10px;
+
 }
 
 .navegadorAbajo{
@@ -136,89 +137,9 @@ nav a:hover{
     }
 }
 
-.fondo {
-
-    font-size:medium;
-    background-color: #cdf063dd;
-    
-    /* background-image: url(../img/Diseño\ sin\ título.png) */
-    
-    
-}
-
-h1 {
-
-    text-align: center;
-}
-h2 {
-    text-overflow: ellipsis;
-    text-align: center;
-}
-
-.primera {
-    right: 5%;
-    left: 15%;
-    margin-top: 3%;
-    margin-left: -3%;
-    height: 60vh;
-    width: auto;
-    border-radius: 1rem;
-    -webkit-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
-    -moz-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
-    box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
-
-}
-.p{
-    padding-left: 2rem;
-    padding-right: 4rem;
-    margin: 2%;
-}
-
-.mision {
-
-    padding-bottom: 2rem;
-    margin-left: 25%;
-    margin-right: 17%;
-    width: 27VW;
-    background-color: #b8f546b8; /* Color de fondo para la franja */
-    border: 1px solid #5fd207; /* Borde negro */
-    border-radius: 10PX;
-    
-    
-}
-
-h1 .mision{
-    margin-top: 10vw;
-}
 
 
-.texto1 {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: large;
-    background-color: rgb(255, 255, 255);
-    border-radius: 1rem;
-    left: 10%;
-    right: 10%;
-    display: flex;
-    text-align: start;
-    height:900px;
-    width: 60vh;
-    
-    
-}
 
-.q{
-    display: flex;
-    padding-bottom: 10rem;
-    margin-left: 25%;
-    background-color: aqua;
-
-}
-
-.info {
-    display: inline-block;
-    
-}
 
 /* tittles */
 @font-face{
@@ -240,19 +161,184 @@ h1 .mision{
 
 /* end title */
 
+
+
 /* history */
 .history{
     width: 99vw;
-    height: 90px;
-    background-color: aqua;
+    height: 450px;
+
+    /* background-color: aqua; */
 }
 
 .history_container{
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 400px
+
+
 
 }
+
+.history_container__text{
+    height: 300px;
+    width: 600px;
+    /* background-color: #f1f1f1; */
+    /* background-color: white; */
+    font-size: 17px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+    margin-left: 10px;
+    padding-right: 19px;
+    text-align: justify;
+
+
+
+
+}
+
+.history_container__video{
+    margin-bottom: 200px;
+    margin-top: 210px;
+    background-color: #5fd207;
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+
 /* end history */
+
+
+
+
+
+
+.fondo {
+
+    font-size:medium;
+    background-color: #f1f1f1;
+    
+    /* background-image: url(../img/Diseño\ sin\ título.png) */
+    
+    
+}
+.aboutUs{
+    width: 100%;
+    display: flex;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.aboutUs__container{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 64px 0px 20px 0px;
+    /* padding-bottom: 10rem; */
+    /* background-color: aqua; */
+
+
+}
+
+.texto1 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    margin-right: -4%;
+    /* left: 10%;
+    right: 10%; */
+    /* display: flex; */
+    text-align: start;
+    height:552px;
+    width: 576px;
+    /* max-width: 350px;  */
+    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+    /* padding:30px ; */
+    /* background-color:blue; */
+    
+    
+}
+
+.texto1 .titulooo{
+    font-size: 1.3rem;
+    margin: 30px 0px 20px 0px;
+}
+
+.texto1 p {
+    /* background-color: red; */
+    height:450px;
+    width: 500px;
+    margin-left:40px ;
+}
+
+.primera {
+    right: 5%;
+    left: 15%;
+    margin-top: 100px;
+    margin-right: -4%;
+    height: 512px;
+    width: 640px;
+    border-radius: 1rem;
+    -webkit-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
+    -moz-box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
+    box-shadow: 11px 16px 46px -12px rgba(189,189,189,1);
+    background-color: #b8f546b8;
+    z-index: -1;
+    
+
+
+}
+
+/* .info {
+    display: inline-block;
+    
+} */
+.p{
+    padding-left: 2rem;
+    padding-right: 4rem;
+    margin: 2%;
+    background-color: #5fd207;
+}
+
+h1 {
+
+    text-align: center;
+}
+
+h2 {
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+
+
+
+
+.mision {
+
+    padding-bottom: 2rem;
+    margin-left: 24%;
+    margin-right: 17%;
+    width: 27VW;
+    background-color: #b8f546b8; /* Color de fondo para la franja */
+    border: 1px solid #5fd207; /* Borde negro */
+    border-radius: 10PX;
+    
+    
+}
+
+h1 .mision{
+    margin-top: 10vw;
+}
+
+
+
 
 
 
