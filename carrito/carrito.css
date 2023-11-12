@@ -3,13 +3,26 @@ body{
     padding: 0;
 }
 
+.cartaProducto{
+    display: flex;
+}
+
+.card-items{
+    width: 1000px;
+    /* height: auto; */
+    /* background-color: aqua; */
+}
+
 .todoContenido{
     display: flex;
     box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
     padding: 15px;
-    margin: 0 0 0 10%;
-    /* max-width: 300px; */
-    /* width: 200%; */
+    margin: 0 20px 0 10%;
+    justify-content: space-between;
+}
+
+.item-content{
+    display: flex;
 }
 
 .card-items img{
@@ -17,21 +30,13 @@ body{
     height: auto;
 }
 
-.item-content{
-    display: flex;
-}
-
 .aumentador{
     display: flex;
-    /* background-color: aqua; */
-    /* justify-content: center; */
     align-items: center;
     padding: 3px 15px;
     border: 1px solid rgb(163, 163, 163);
-    /* box-shadow: 1px 1px 10px rgb(0 0 0 / 20%); */
     margin: 30px 0;
-    border-radius: 5px;
-    
+    border-radius: 5px;    
 }
 
 .aumentador .text{
@@ -39,32 +44,40 @@ body{
     margin: 0 15px;
 }
 
-
 .aumentador .minus,.btn-agregar-carito:hover{
     cursor: pointer;
+}
+
+.carta-resumen{
+    /* background-color: brown; */
+    width: 500px;
+    height: 300px;
 }
 
 
 .f{
     display: flex;
     justify-content: space-between;
+    top: 0;
+    bottom: 0;
+    margin-bottom: -20px;
+    background-color: aqua;
 }
 
-
-.carta-resumen{
-    max-width: 40%;
-    /* background-color: aqua; */
+@media screen and (max-width:1100px){
+    body{
+        background-color: rgb(149, 255, 0);
+    }
+    
+    .cartaProducto{
+        display: block;
+    }
     
 }
 
-/* .cart-products h3{
-    display: flex;
-    justify-content: center;
-    color: chartreuse;
-    font-size: 2rem;
-} */
 
-.cart-products{
-    display: flex;
-    justify-content: space-between;
-}
+
+
+
+
+
