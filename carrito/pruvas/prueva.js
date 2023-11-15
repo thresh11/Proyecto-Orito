@@ -1,13 +1,11 @@
-let contenedorCarroDeCompra = document.querySelector('.card-items');
-let contenedorResumenDeCompra = document.querySelector('.tabla_resumen_compra')
-// let precioTotal = document.querySelector('.precio-total')
-// let cantidadDeProductos = document.querySelector('.count-product');
+const contenedorCarroDeCompra = document.querySelector('.card-items');
+const contenedorResumenDeCompra = document.querySelector('.tabla_resumen_compra')
 
 let comprarCosas = [];
 let totalCard = 0;
 let countProduct = 0;
 let costoEnvio = 10;
-let total;
+let total = 0;
 
 window.addEventListener('load', () => {
     const guardarCarrito = localStorage.getItem('cart');
@@ -21,6 +19,7 @@ loadEventListenrs();
 function loadEventListenrs() {
     contenedorCarroDeCompra.addEventListener('click', deleteProduct);
 }
+// const loadEventListenrs = () => contenedorCarroDeCompra.addEventListener('click', deleteProduct);
 
 function deleteProduct(e) {
     if (e.target.classList.contains('eliminar-producto')) {
@@ -33,7 +32,7 @@ function deleteProduct(e) {
 }
 
 function loadHtml() {
-    clearHtml();
+    contenedorCarroDeCompra.innerHTML = '';
     comprarCosas.forEach(product => {
         const { image, title, price, amount, id } = product;
         const row = document.createElement('div');
@@ -54,30 +53,26 @@ function loadHtml() {
                     </div>
                 <span class="eliminar-producto" data-id="${id}">X</span>         
         `;
-        clearHtml_2();
+        contenedorResumenDeCompra.innerHTML = '';
         const fila = document.createElement('div');
-                fila.classList.add('item');
+        row.classList.add('item');
                 fila.innerHTML = `
                 <div class="f">
-                <p>productos(${countProduct})</p>
-                <p>$ ${totalCard}</p>
+                    <p>productos(${countProduct})</p>
+                    <p>$ ${totalCard}</p>
                 </div>
-                <div class="f">
-                <p>Envio</p>
-                <p>$ ${costoEnvio.toFixed(3)}</p>
-                </div>
-                <div class="f">
-                <p>Total</p>
-                <p>$ ${total}</p>
-                </div>
-                
-     
+                    <div class="f">
+                        <p>Envio</p>
+                        <p>$ ${costoEnvio.toFixed(3)}</p>
+                    </div>
+                        <div class="f">
+                            <p>Total</p>
+                            <p>$ ${total}</p>
+                        </div>
                 `;
 
         contenedorResumenDeCompra.appendChild(fila);
         contenedorCarroDeCompra.appendChild(row);
-        // precioTotal.innerHTML = totalCard;
-        // cantidadDeProductos.innerHTML = countProduct;
     });
 
     // Agregar event listeners para los botones de aumento y disminución
@@ -116,34 +111,14 @@ function decrementAmount(id) {
     }
 }
 
-const clearHtml = () => contenedorCarroDeCompra.innerHTML = '';
-const clearHtml_2 = () => contenedorResumenDeCompra.innerHTML = '';
-
-
 function updateCart() {
-    loadHtml();
+
     totalCard = comprarCosas.reduce((total, product) => total + (parseFloat(product.price) * product.amount), 0);
     total = totalCard + costoEnvio;
     totalCard = totalCard.toFixed(3);
     total = total.toFixed(3);
     countProduct = comprarCosas.length;
-    // costoEnvio = costoEnvio.toFixed(3);
 
     loadHtml();
-    // precioTotal.innerHTML = totalCard;
-    // cantidadDeProductos.innerHTML = countProduct;
     localStorage.setItem('cart', JSON.stringify(comprarCosas));
 }
-
-
-
-
-
-
-// let coste_envio = 400000
-// coste_envio = coste_envio.toFixed(3);
-// console.log(coste_envio);
-
-const formatearConSeparadores = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        // let coste_envio = 5000;
-        // coste_envio = formatearConSeparadores(coste_envio);
