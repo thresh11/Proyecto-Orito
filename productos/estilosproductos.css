@@ -472,7 +472,6 @@ nav .desaparecer  li a:hover{
     width: 65vw;
     margin-left: 2vw;
     height: 8vh;
-
     border: 1px solid #adef4f;
     background-color: #adef4f;
     border-radius: 10px;
@@ -480,6 +479,7 @@ nav .desaparecer  li a:hover{
     box-shadow: 0 5px 10px rgb(0 0 0 / 40%);
     display: flex;
     flex-wrap: wrap;
+    background-color: aqua;
    
     
     
@@ -527,7 +527,7 @@ nav .desaparecer  li a:hover{
     height: 300vh;
     overflow: hidden;
     position: relative;
-    background-color: #a62222;
+    /* background-color: #a62222; */
   }
 
 #pro__contedor {
@@ -554,6 +554,7 @@ nav .desaparecer  li a:hover{
 
 .pro__contedor__caja{
         /* border: 1px solid black; */
+
         border-radius: 20px;
         padding: 20px;
         margin: 20px 20px; 
@@ -562,6 +563,7 @@ nav .desaparecer  li a:hover{
         box-shadow: 0 5px 10px rgb(0 0 0 / 40%);
         float: left;
         clear: none;
+        
         
     
     

@@ -3,7 +3,10 @@
 require '../config/database.php';
 $db = new Database();
 $con = $db->conectar();
-$sql = $con ->prepare("")
+
+$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto  FROM productos WHERE activo =1");
+$sql->execute();
+$resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -162,13 +165,16 @@ $sql = $con ->prepare("")
                 <input type="text" class="pro__contedor__busqueda-box" placeholder="Buscar...">
             </div>
 
+
+            
+                <?php foreach($resultado as $row)   {     ?>
                 <div class="pro__contedor__caja Brownie Brownie_almendras 5.000 unidad Brownie2">
 
                     <img src="../img/brawni_almendras2-removebg-preview1.png" alt="foto" onmouseover="cambiarImagen(this)" onmouseout="restaurarImagen(this)">
                     <div class="texto">
-                        <h3> Brownie de aguacate con almendra</h3>
-                        <p>la unidad</p>
-                        <h1> $ 5.500</h1>
+                        <h3> <?php  echo $row ['nombre_producto']?></h3>
+                        <p><?php  echo $row ['id_producto']?></p>
+                        <h1> <?php  echo $row ['precio_producto']?></h1>
                     </div>
                     <div class="conteImg__contenedor-caja-button">
                         <button class="conteImg__contenedor-caja-button-1">Conoce mas!</button>
@@ -176,14 +182,18 @@ $sql = $con ->prepare("")
                     </div>
                     
                 </div>
+                <?php  } ?>
 
 
-                <div class="pro__contedor__caja Brownie Brownie_arroz 5.000 unidad Brownie2">
+                <!-- <div class="pro__contedor__caja Brownie Brownie_arroz 5.000 unidad Brownie2">
+                    <
                     <img src="../img/brawni_arroz2-removebg-preview1.png" alt="foto">
                     <div class="texto">
+
                         <h3>  Brownie de aguacate con arroz </h3>
                         <p>la unidad</p>
                         <h1> $ 5.000</h1>
+
                     </div>
                     <div class="conteImg__contenedor-caja-button">
                         <button class="conteImg__contenedor-caja-button-1">Conoce mas!</button>
@@ -348,7 +358,7 @@ $sql = $con ->prepare("")
                         <button class="conteImg__contenedor-caja-button-2">Añadir al carrito</button>
                     </div>
 
-                </div>
+                </div>-->
                 
                 
             </section>
