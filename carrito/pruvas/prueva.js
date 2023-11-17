@@ -31,8 +31,11 @@ function deleteProduct(e) {
     }
 }
 
+
 function loadHtml() {
-    contenedorCarroDeCompra.innerHTML = '';
+    if (comprarCosas.length > 0) {
+        contenedorCarroDeCompra.innerHTML = '';    
+    }
     comprarCosas.forEach(product => {
         const { image, title, price, amount, id } = product;
         const row = document.createElement('div');
@@ -57,6 +60,7 @@ function loadHtml() {
         const fila = document.createElement('div');
         row.classList.add('item');
                 fila.innerHTML = `
+                <h3 id="texto_oscuro">resumen de compra</h3>
                 <div class="f">
                     <p>productos(${countProduct})</p>
                     <p>$ ${totalCard}</p>
@@ -69,11 +73,13 @@ function loadHtml() {
                             <p>Total</p>
                             <p>$ ${total}</p>
                         </div>
+                        <input type="submit" value="continuar compra" class="btn-continuarCompra"> 
                 `;
 
         contenedorResumenDeCompra.appendChild(fila);
         contenedorCarroDeCompra.appendChild(row);
     });
+
 
     // Agregar event listeners para los botones de aumento y disminución
     const plusButtons = document.querySelectorAll('.btn-agregar-carito');
@@ -93,7 +99,7 @@ function loadHtml() {
         });
     });
 }
-
+        
 
 function incrementAmount(id) {
     const product = comprarCosas.find(product => product.id === id);

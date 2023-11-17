@@ -33,7 +33,11 @@ function deleteProduct(e) {
 }
 
 function loadHtml() {
-    clearHtml();
+    // clearHtml();
+    if (comprarCosas.length > 0) {
+        contenedorCarroDeCompra.innerHTML = '';    
+    }
+    
     comprarCosas.forEach(product => {
         const { image, title, price, amount, id } = product;
         const row = document.createElement('div');

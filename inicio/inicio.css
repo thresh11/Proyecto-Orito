@@ -134,7 +134,15 @@ nav .desaparecer  li a:hover{
 
 
 
-
+#btn_ver_carrito{
+    display: flex;
+    border: none;
+    padding: 3% 40%;
+    margin-bottom: 20px;  
+    background-color: #0c6c2c;
+    color: white;
+    border-radius: 3px; 
+}
 
 
 
@@ -147,7 +155,7 @@ nav .desaparecer  li a:hover{
     top: 82px;
     right: -18px;
     background-color: #fff;
-    padding: 0 18px;
+    padding: 0 30px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
     display: none;
 
@@ -159,6 +167,28 @@ nav .desaparecer  li a:hover{
     margin-bottom: 16px;
     transition-duration: .5s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -570,7 +600,19 @@ footer p a {
 
 
 
+
 /* .card-items{
     background-color: #14b349;
     overflow: scroll;
 } */
+
+/* .cart-products {
+    max-height: 300px;
+    overflow-y: auto;
+} */
+
+.cart-products.scrollable {
+    max-height: 590px; /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto;
+}
+

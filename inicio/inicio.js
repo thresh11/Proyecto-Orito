@@ -167,6 +167,14 @@ function updateCart() {
     amountProduct.innerHTML = countProduct;
     
 
+
+    const cartProducts = document.getElementById("products-id");
+    if (buyThings.length > 3) {
+        cartProducts.classList.add('scrollable');
+    } else {
+        cartProducts.classList.remove('scrollable');
+    }
+
     localStorage.setItem('cart', JSON.stringify(buyThings));
 }
 
