@@ -616,3 +616,13 @@ footer p a {
     overflow-y: auto;
 }
 
+.cart-products::-webkit-scrollbar{
+    width: 8px;
+    background-color: rgb(211, 211, 211);
+}
+
+.cart-products::-webkit-scrollbar-thumb{
+    /* background-color: #6fa622; */
+    background-color: #0c6c2c;
+    border-radius: 5px;
+}
