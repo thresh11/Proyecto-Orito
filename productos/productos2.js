@@ -15,7 +15,6 @@ window.addEventListener('scroll', function () {
 
 //carrito
 
-
 const verCarrito = (x) => document.getElementById("products-id").style.display = "block";
 const cerrarCarrito = () => document.getElementById("products-id").style.display = "none"; 
 
@@ -29,6 +28,14 @@ let totalCard = 0;
 let countProduct = 0;
 
 
+window.addEventListener('load', () => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        buyThings = JSON.parse(savedCart);
+        updateCart();
+    }
+});
+
 loadEventListenrs();
 function loadEventListenrs() {
     allContainerCart.addEventListener('click', addProduct);
@@ -40,6 +47,7 @@ function addProduct(e) {
     if (e.target.classList.contains('btn-agregar-carito')) {
         const selectProduct = e.target.parentElement;
         readTheContent(selectProduct);
+        updateCart();
     }
 }
 
@@ -48,23 +56,28 @@ function deleteProduct(e) {
     if (e.target.classList.contains('delete-product')) {
         const deleteId = e.target.getAttribute('data-id');
 
-        buyThings.forEach(value => {
-            if (value.id == deleteId) {
-                let priceReduce = parseFloat(value.price) * parseFloat(value.amount);
-                totalCard = totalCard - priceReduce;
-                totalCard = totalCard.toFixed(2);  
-            }
-        });
+        // buyThings.forEach(value => {
+        //     if (value.id == deleteId) {
+        //         let priceReduce = parseFloat(value.price) * parseFloat(value.amount);
+        //         totalCard = totalCard - priceReduce;
+        //         totalCard = totalCard.toFixed(2);  
+        //     }
+        // });
+        // buyThings = buyThings.filter(product => product.id != deleteId);
+
+        // countProduct -- ;
+
         buyThings = buyThings.filter(product => product.id != deleteId);
+        countProduct--;
+        updateCart();
 
-        countProduct -- ;
     }
 
-    if (buyThings.length === 0) {
-        priceTotal.innerHTML = 0;
-        amountProduct.innerHTML = 0;
-    }
-    loadHtml();
+    // if (buyThings.length === 0) {
+    //     priceTotal.innerHTML = 0;
+    //     amountProduct.innerHTML = 0;
+    // }
+    // loadHtml();
 }
 
 
@@ -82,22 +95,38 @@ function readTheContent(product) {
     totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
     totalCard = totalCard.toFixed(3);
 
+    // const exist = buyThings.some(product => product.id === infoProduct.id);
+    // if (exist) {
+    //     const pro = buyThings.map(product => {
+    //         if(product.id === infoProduct.id){
+    //             product.amount++;
+    //             return product;
+    //         }else{
+    //             return product;
+    //         }
+    //     });
+    //     buyThings = [...pro];
+    // }else{
+    //     buyThings = [...buyThings,infoProduct]
+    //     countProduct++;
+    // }
+    // loadHtml();
+
     const exist = buyThings.some(product => product.id === infoProduct.id);
     if (exist) {
         const pro = buyThings.map(product => {
-            if(product.id === infoProduct.id){
+            if (product.id === infoProduct.id) {
                 product.amount++;
                 return product;
-            }else{
+            } else {
                 return product;
             }
         });
         buyThings = [...pro];
-    }else{
-        buyThings = [...buyThings,infoProduct]
-        countProduct++;
+    } else {
+        buyThings = [...buyThings, infoProduct];
     }
-    loadHtml();
+    updateCart();
 }
 
 function loadHtml() {
@@ -114,7 +143,6 @@ function loadHtml() {
             <h6>Cantidad: ${amount}</h6>
         </div>
         <span class="delete-product" data-id="${id}">X</span>
-        <a href="../carrito/carrito.html">mirar carrito</a>
         
         `;
 
@@ -128,6 +156,21 @@ function loadHtml() {
 
 function clearHtml() {
     containerBuyCart.innerHTML = '';
+}
+
+function updateCart() {
+    loadHtml();
+    totalCard = buyThings.reduce((total, product) => total + (parseFloat(product.price) * product.amount), 0);
+    totalCard = totalCard.toFixed(3);
+    // countProduct = buyThings.reduce((total, product) => total + product.amount, 0);
+    countProduct = buyThings.length;
+    
+
+    priceTotal.innerHTML = totalCard;
+    amountProduct.innerHTML = countProduct;
+    
+
+    localStorage.setItem('cart', JSON.stringify(buyThings));
 }
 
 

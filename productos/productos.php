@@ -11,18 +11,20 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="estilosproductos.css">
+    <link rel="stylesheet"  href="estilosproductos.css">
     <script defer src="scrit_productos.js"></script>
+
+
+
+
 </head>
+
 <body>
     <header>
         <div class="navegador">
@@ -157,7 +159,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             
 <!-- <div id="contenedor"> -->
         <section id="pro__contedor">
-          
+        
 
 
             <div class="pro__contedor__busqueda_verde">
@@ -169,8 +171,14 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             
                 <?php foreach($resultado as $row)   {     ?>
                 <div class="pro__contedor__caja Brownie Brownie_almendras 5.000 unidad Brownie2">
-
-                    <img src="../img/brawni_almendras2-removebg-preview1.png" alt="foto" onmouseover="cambiarImagen(this)" onmouseout="restaurarImagen(this)">
+                    <?php
+                    $id = $row["id_producto"];
+                    $imagen = "../img/productos/" . $id .  "/brawni_almendras2.png";
+                    if (!file_exists($imagen)){
+                        $imagen = "../img/logo.jpeg";
+                    }
+                    ?>
+                    <img src="<?php  echo $imagen; ?>" alt="foto" >
                     <div class="texto">
                         <h3> <?php  echo $row ['nombre_producto']?></h3>
                         <p><?php  echo $row ['id_producto']?></p>
@@ -182,7 +190,8 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     
                 </div>
-                <?php  } ?>
+                <?php  } 
+                ?>
 
 
                 <!-- <div class="pro__contedor__caja Brownie Brownie_arroz 5.000 unidad Brownie2">

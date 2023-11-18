@@ -12,7 +12,7 @@ header{
     opacity: 90%;
     background-attachment: fixed ;
     /* position: relative; */
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .container{
@@ -259,6 +259,10 @@ nav .desaparecer  li a:hover{
     border-radius: 5px;
 }
 
+body{
+    background-color: #000000
+}
+
 
 
 
@@ -458,7 +462,7 @@ nav .desaparecer  li a:hover{
 .pro__contedor__busqueda{
     width: 98vw;
     /* height: 10vh; */
-    background-color: #e01212;
+    /* background-color: #e01212; */
     margin-top: 5vh;
     display: flex;
     flex-wrap: wrap;

@@ -1,10 +1,24 @@
+<?php
+
+require '../config/database.php';
+$db = new Database();
+$con = $db->conectar();
+
+$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto  FROM productos WHERE activo =1");
+$sql->execute();
+$resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="productos2.css">
+    <link rel="stylesheet" type="text/css" href="productos2.css">
     <script defer src="productos2.js"></script>
 </head>
 <body>
@@ -146,17 +160,23 @@
 
             <div class="products">
 
+
+            <?php foreach($resultado as $row)   {     ?>
                 <div class="carta  Brownie Brownie_almendras 5.000 unidad Brownie2">
                         <h5>mas vendido</h5> 
                         <img src="../img/brawni_almendras2-removebg-preview1.png" alt="browni_almendras">
                     <div class="contenido_texto">
-                        <h1 class="titulo">Brawnie de aguacate con almendra</h1>
+                        <h1 class="titulo"><?php  echo $row ['nombre_producto']?></h1>
                         <p>la unidad</p>
                         <p class="precio">$<span>5.500</span> pesos</p> 
                     </div>
                         <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                        <a href="" data-id="1" class="btn-agregar-carito">Añadir al carrito</a>                
+                        <a href="" data-id="<?php echo $row ['id_producto']?>" class="btn-agregar-carito">Añadir al carrito</a>                
                 </div>
+
+            <?php  } ?>
+
+
 
                     <div class="carta Brownie Brownie_arroz 5.000 unidad Brownie2">
                         <h5>mas vendido</h5>

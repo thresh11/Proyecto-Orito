@@ -22,6 +22,21 @@ header{
     /* position: relative; */
 }
 
+
+@media screen and (max-width: 400px){
+    header{
+        width: 100vw;
+        height : 40vh;
+        background-size: contain ;
+        background-repeat: no-repeat;
+        background-color: #5fd207;
+        
+
+    }
+
+    
+}
+
 .barra{
     width: 100%;
     height: 90px;
@@ -42,6 +57,7 @@ header{
     left: 0;
     transition: background-color 1000ms; 
     /* background-color: #000; */
+    z-index: 2;
 }
     
 nav {
@@ -199,14 +215,26 @@ nav .desaparecer  li a:hover{
     color: #537f14;
 }
 
+
+@media screen and (max-width: 720px){
+    .titulooo{
+        font-size: 1.1rem;
+        font-family: titulo;
+        height: 40px;
+        width:100%;
+        margin-bottom: 5vh;
+
+    }
+    
+}
 /* end title */
 
 
 
 /* history */
 .history{
-    width: 99vw;
-    height: 450px;
+    width: 98vw;
+    /* height: 450px; */
 
     /* background-color: aqua; */
 
@@ -218,37 +246,93 @@ nav .desaparecer  li a:hover{
     justify-content: center; 
     align-items: center;
     height: 400px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     
 
 
 
 }
 
+
 .history_container__text{
     height: 300px;
     width: 600px;
     /* background-color: #f1f1f1; */
     /* background-color: white; */
-    font-size: 17px;
+    font-size: 18px;
     font-family:Arial, Helvetica, sans-serif;
     /* margin-top: 30px; */
-    margin-left: 10px;
-    padding-right: 19px;
+    margin-left: 40px;
+    padding-right: 20px;
     text-align: justify;
+    margin-bottom: 40px;
+
 
 
 
 
 }
 
-.history_container__video{
+.history_container-video{
     margin-bottom: 200px;
     margin-top: 210px;
     background-color: #5fd207;
     margin-left: 20px;
     padding: 5px;
     border-radius: 20px;
+
+
+    
+}
+
+
+  
+video {
+    top: 0;
+    width: 520px;
+    height: 300px;
+    margin: 0%;
+    border: 3px solid  #5fd207;
+    z-index: -1;
+  }
+  
+
+
+@media screen and (max-width:720px){
+    .history_container{
+        display: block;
+        height: 100%;
+
+    }
+    .history_container__text{
+        font-size: 12px;
+        width: 88%;
+        padding: 2%;
+        margin: 0;
+        height: auto;
+
+    }
+    .history_container-video{
+        margin-bottom: 0px;
+        margin-top: 0px;
+        background-color: #f1f1f1;
+        margin-left: 5%;
+        padding: 2px;
+        border-radius: 10px;
+
+    }
+
+    video{ 
+        top: 0;
+        width: 80%;
+        height: 40%;
+        margin: 0%;
+        z-index: -1;
+        border: 3px solid #5fd207;
+
+    }
+
+    
     
 }
 
