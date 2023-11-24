@@ -1,5 +1,4 @@
 <?php
-
 require '../config/database.php';
 $db = new Database();
 $con = $db->conectar();
@@ -7,7 +6,6 @@ $con = $db->conectar();
 $sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto  FROM productos WHERE activo =1");
 $sql->execute();
 $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>
 
