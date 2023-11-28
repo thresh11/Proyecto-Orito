@@ -1,10 +1,10 @@
 <?php
-
+require '../config/config.php';
 require '../config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto  FROM productos WHERE activo =1");
+$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto, unidad_producto  FROM productos WHERE activo =1");
 $sql->execute();
 $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
@@ -44,21 +44,21 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                         </li>
                 </ul> 
                 
-                    <div class="header-section container">
-                        <img onclick="verCarrito(this)" class="cart" src="../img/carrito.png" alt="carrito">
-                        <p class="count-product">0</p>
-                    </div>
-                    <div class="cart-products" id="products-id">
-                        <p class="close-btn" onclick="cerrarCarrito()">X</p>
-                        <h3>Mi carrito</h3>
-                        <div class="card-items">
-                    
+                <div class="header-section container">
+                            <img onclick="verCarrito(this)" class="cart" src="../img/carrito.png" alt="carrito">
+                            <p class="count-product">0</p>
                         </div>
-                        <h2>Total: $ <strong class="precio-total">0</strong></h2>
-                    </div>               
-            </nav>
-        </div>
-    
+                        <div class="cart-products" id="products-id">
+                            <p class="close-btn" onclick="cerrarCarrito()">X</p>
+                            <h3>Mi carrito</h3>
+                            <div class="card-items">
+                        
+                            </div>
+                            <h2>Total: $ <strong class="precio-total">0</strong></h2>
+                            <a href="../carrito/carrito.html"><input type="submit" value="ver el carrito" id="btn_ver_carrito"></a>
+                        </div>
+                </nav>
+        </div>     
     </header>
 
 
@@ -163,22 +163,28 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
             <?php foreach($resultado as $row)   {     ?>
                 <div class="carta  Brownie Brownie_almendras 5.000 unidad Brownie2">
-                        <h5>mas vendido</h5> 
-                        <img src="../img/brawni_almendras2-removebg-preview1.png" alt="browni_almendras">
+                        <?php
+                    $id = $row["id_producto"];
+                    $imagen = "../img/productos/" . $id .  "/producto.PNG";
+                    if (!file_exists($imagen)){
+                        $imagen = "../img/logo.jpeg";
+                    }
+                    ?>
+                    <img src="<?php  echo $imagen; ?>" alt="foto" >
                     <div class="contenido_texto">
-                        <h1 class="titulo"><?php  echo $row ['nombre_producto']?></h1>
-                        <p>la unidad</p>
-                        <p class="precio">$<span>5.500</span> pesos</p> 
+                        <h1 class="titulo"><?php  echo $row ['nombre_producto'];?></h1>
+                        <p><?php echo $row ['unidad_producto']; ?></p>
+                        <p class="precio">$<span><?php echo number_format( $row ['precio_producto'], 0, ',','.' );?></span> pesos</p> 
                     </div>
-                        <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                        <a href="" data-id="<?php echo $row ['id_producto']?>" class="btn-agregar-carito">Añadir al carrito</a>                
+                        <a href="../ventana_de_productos/index.php?id_producto=<?php echo $row ["id_producto"]; ?>&token=<?php echo hash_hmac('sha1', $row["id_producto"], KEY_TOKEN); ?>" class="btn-conoce-mas">Conoce mas!</a> 
+                        <a href="" data-id="<?php echo $row ['id_producto'];?>" class="btn-agregar-carito">Añadir al carrito</a>                
                 </div>
 
             <?php  } ?>
 
 
 
-                    <div class="carta Brownie Brownie_arroz 5.000 unidad Brownie2">
+                    <!-- <div class="carta Brownie Brownie_arroz 5.000 unidad Brownie2">
                         <h5>mas vendido</h5>
                             <img src="../img/brawni_arroz2-removebg-preview1.png" alt="browni_arroz">
                         <div class="contenido_texto">
@@ -308,17 +314,19 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                                 <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
                                 <a href="" data-id="12" class="btn-agregar-carito">Añadir al carrito</a> 
                         </div>   
-
-                        <div class="carta mantequilla 10.000 gramos">
+ -->
+                        <!-- <div class="carta mantequilla 10.000 gramos">
                             <img src="../img/matequilla.png" alt="kumis">
                         <div class="contenido_texto">
                             <h1 class="titulo">Mantequilla de mani sin sal </h1>
                             <p>250 gr</p>
                             <p class="precio">$<span>11.000</span> pesos</p>  
                         </div>
-                            <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
+                            <a href="../iniciar_registrar/registrar.html"  class="btn-conoce-mas">Conoce mas!</a> 
                             <a href="" data-id="13" class="btn-agregar-carito">Añadir al carrito</a> 
-                        </div>   
+                            <a href ="../iniciar_registrar/registrar.html">prueva</a>
+                            <a href="../productos/productos.html">Productos</a>
+                        </div>    -->
 
 
 
@@ -348,6 +356,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                 </div>
     </footer>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
