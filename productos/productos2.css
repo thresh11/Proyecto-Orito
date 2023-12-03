@@ -135,6 +135,15 @@ nav .desaparecer  li a:hover{
 }
 
 
+#btn_ver_carrito{
+    display: flex;
+    border: none;
+    padding: 3% 40%;
+    margin-bottom: 20px;  
+    background-color: #0c6c2c;
+    color: white;
+    border-radius: 3px; 
+}
 
 
 
@@ -160,7 +169,7 @@ nav .desaparecer  li a:hover{
     width: 65vw;
     margin-left: 2vw;
     height: 8vh;
-
+    position: absolute;
     border: 1px solid #adef4f;
     background-color: #adef4f;
     border-radius: 10px;
@@ -168,7 +177,7 @@ nav .desaparecer  li a:hover{
     box-shadow: 0 5px 10px rgb(0 0 0 / 40%);
     display: flex;
     flex-wrap: wrap;
-   
+
     
     
 
@@ -331,6 +340,8 @@ jhon */
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: white;
+    margin-top: 60px;
+
 }
 
 
@@ -423,6 +434,7 @@ jhon */
     text-decoration: none;
     padding: 7px 50px ;
     border-radius: 5px;
+    color: #000;
 }
 
 

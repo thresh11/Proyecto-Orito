@@ -42,14 +42,25 @@ function loadEventListenrs() {
     containerBuyCart.addEventListener('click', deleteProduct);
 }
 
+
+
 function addProduct(e) {
-    e.preventDefault();
+    // Evita el comportamiento predeterminado solo si el clic proviene de un botón con la clase 'btn-agregar-carito'
     if (e.target.classList.contains('btn-agregar-carito')) {
+        e.preventDefault();
         const selectProduct = e.target.parentElement;
         readTheContent(selectProduct);
-        updateCart();
     }
 }
+
+// function addProduct(e) {
+//     e.preventDefault();
+//     if (e.target.classList.contains('btn-agregar-carito')) {
+//         const selectProduct = e.target.parentElement;
+//         readTheContent(selectProduct);
+//         updateCart();
+//     }
+// }
 
 
 function deleteProduct(e) {
@@ -170,13 +181,16 @@ function updateCart() {
     amountProduct.innerHTML = countProduct;
     
 
+
+    const cartProducts = document.getElementById("products-id");
+    if (buyThings.length > 3) {
+        cartProducts.classList.add('scrollable');
+    } else {
+        cartProducts.classList.remove('scrollable');
+    }
+
     localStorage.setItem('cart', JSON.stringify(buyThings));
 }
-
-
-
-
-
 
 
 
