@@ -1,5 +1,5 @@
 <?php
-
+require '../config/config.php';
 require '../config/database.php';
 $db = new Database();
 $con = $db->conectar();
@@ -21,29 +21,30 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     <script defer src="productos2.js"></script>
 </head>
 <body>
-    <header>
-        <div class="navegador">
-            <a href="../inicio/inicio.html"><h1><span class="color_0">O</span>rito Verde</h1></a>
-            <nav>
-                <ul>
-                    <div class="desaparecer">
-                        <li><a href="../inicio/inicio.html">Inicio</a></li>
-                        <li><a href="../sobre nosotros/sobrenosotros.html">Sobre nosotros</a></li>
-                        <li><a href="productos2.html">Productos</a></li>
-                        <li><a href="../iniciar_registrar/registrar.html">Registrar</a></li>
-                    </div>
-                        <li class="icon_menu">
-                            <a href="#"><span class="material-symbols-outlined" id="tamaño">Menú</span></a>
-                                <ul class="contenido_vertical">
-                                    <li><a href="#">Servicios</a></li>
-                                    <li><a href="#">Productos</a></li>
-                                    <li><a href="#">Guardería</a></li>
-                                    <li><a href="#">Promociones</a></li>
-                                </ul>
-                        </li>
-                </ul> 
-                
-                <div class="header-section container">
+<header>
+        <div class="navegador">     
+            <a href="../inicio/inicio.html"><h1><span class="color_0">O</span>rito verde</h1></a>
+
+                <nav>
+                    <ul>
+                        <div class="desaparecer">
+                            <li><a href="inicio.html">Inicio</a></li>
+                            <li><a href="../sobre nosotros/sobrenosotros.html">Sobre Nosotros</a></li>
+                            <li><a href="../productos/productos2.php">productos</a></li>
+                            <li><a href="../iniciar_registrar/iniciar_sesion.html">Iniciar Sesión</a></li>
+                        </div>
+                            <li class="icon_menu">
+                                <a href="#"><span class="material-symbols-outlined" id="tamaño">Menú</span></a>
+                                    <ul class="contenido_vertical">
+                                        <li><a href="inicio.html">Inicio</a></li>
+                                        <li><a href="../sobre nosotros/sobrenosotros.html">Sobre Nosotros</a></li>
+                                        <li><a href="../productos/productos.html">Productos</a></li>
+                                        <li><a href="../iniciar_registrar/registrar.html">Iniciar Sesión</a></li>
+                                    </ul>
+                            </li>
+                    </ul>
+
+                        <div class="header-section container">
                             <img onclick="verCarrito(this)" class="cart" src="../img/carrito.png" alt="carrito">
                             <p class="count-product">0</p>
                         </div>
@@ -83,7 +84,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             <button onclick="mostrarDiv(1)"  class="filtro__texto__button"> Brownie</button>
 
                 <div id="div-1" class="div-oculto">
-                    <input type="radio" name="categoria" value="Brownie" id="BrownieRadio">Todos nuestros Brownies <br>
+                    <input type="checkbox" name="categoria" value="Brownie" id="BrownieRadio">Todos nuestros Brownies <br>
                     <input type="radio" name="categoria" value="Brownie_almendras" id="Brownie_almendras_radio"> Brownie de Almendras<br>
                     <input type="radio" name="categoria" value="Brownie_arroz" id="Brownie_arroz_radio">  Brownie de Arroz <br>
                     <input type="radio" name="categoria" value="Brownie_avena" id="Brownie_avena_radio">  Brownie de Avena
@@ -161,7 +162,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 
             <?php foreach($resultado as $row)   {     ?>
-                <div class="carta  Brownie Brownie_almendras 5.000 unidad Brownie2">
+                <div class="carta  ">
                         <?php
                     $id = $row["id_producto"];
                     $imagen = "../img/productos/" . $id .  "/producto.PNG";
@@ -175,7 +176,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                         <p><?php echo $row ['unidad_producto']; ?></p>
                         <p class="precio">$<span><?php echo number_format( $row ['precio_producto'], 0, ',','.' );?></span> pesos</p> 
                     </div>
-                        <a href="../ventana_de_productos/index.php?id_producto=<?php echo $row ["id_producto"]; ?>&token=<?php echo hash_hmac('sha1', $row["id_producto"], KEY_TOKEN); ?>" class="btn-conoce-mas">Conoce mas!</a> 
+                        <a href="../prueva/index2.php?id_producto=<?php echo $row ["id_producto"]; ?>&token=<?php echo hash_hmac('sha1', $row["id_producto"], KEY_TOKEN); ?>" class="btn-conoce-mas">Conoce mas!</a> 
                         <a href="" data-id="<?php echo $row ['id_producto'];?>" class="btn-agregar-carito">Añadir al carrito</a>                
                 </div>
 

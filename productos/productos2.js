@@ -12,9 +12,6 @@ window.addEventListener('scroll', function () {
 });
 
 
-
-//carrito
-
 const verCarrito = (x) => document.getElementById("products-id").style.display = "block";
 const cerrarCarrito = () => document.getElementById("products-id").style.display = "none"; 
 
@@ -42,8 +39,6 @@ function loadEventListenrs() {
     containerBuyCart.addEventListener('click', deleteProduct);
 }
 
-
-
 function addProduct(e) {
     // Evita el comportamiento predeterminado solo si el clic proviene de un botón con la clase 'btn-agregar-carito'
     if (e.target.classList.contains('btn-agregar-carito')) {
@@ -52,16 +47,6 @@ function addProduct(e) {
         readTheContent(selectProduct);
     }
 }
-
-// function addProduct(e) {
-//     e.preventDefault();
-//     if (e.target.classList.contains('btn-agregar-carito')) {
-//         const selectProduct = e.target.parentElement;
-//         readTheContent(selectProduct);
-//         updateCart();
-//     }
-// }
-
 
 function deleteProduct(e) {
     if (e.target.classList.contains('delete-product')) {
@@ -193,8 +178,9 @@ function updateCart() {
 }
 
 
-
 //filtro
+
+
 
 const todosRadio = document.getElementById("todosRadio");
 const BrownieRadio = document.getElementById("BrownieRadio");
