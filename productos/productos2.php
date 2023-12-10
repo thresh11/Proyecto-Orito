@@ -112,10 +112,10 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             <button onclick="mostrarDiv(4)" class="filtro__texto__button"> Categorizado por</button>
 
                 <div id="div-4" class="div-oculto">
-                    <input type="radio" name="categoria" value="libras" id="libras__Radio"> libra<br>
+                    <input type="radio" name="categoria" value="libra" id="libras__Radio"> libra<br>
                     <input type="radio" name="categoria" value="kilo" id="kilo__Radio"> Kilo<br>
                     <input type="radio" name="categoria" value="unidad" id="unidad__Radio"> Unidad<br>
-                    <input type="radio" name="categoria" value="litro" id="litro__Radio"> litro<br>
+                    <input type="radio" name="categoria" value="Litro" id="litro__Radio"> litro<br>
                     <input type="radio" name="categoria" value="gramos" id="gramos__Radio"> Gramos<br>
                     <input type="radio" name="categoria" value="otros" id="otros__Radio"> Otros<br>
                 </div>
@@ -143,10 +143,13 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                     <input type="radio" name="categoria" value="panela" id="panela__Radio"> Panela pulverizada<br>
                     <input type="radio" name="categoria" value="mantequilla" id="mantequilla__Radio"> Mantequilla de maní <br>
                 </div>
+                
             <!-- <input type="radio" name="categoria" value="brauni" id="brauniRadio"> braunis<br>
             <input type="radio" name="categoria" value="combo" id="comboRadio"> combos<br>
             <input type="radio" name="categoria" value="oferta" id="ofertaRadio"> oferta  -->
         </div>
+        <!-- Agrega el formulario -->
+
 
 
 
@@ -162,7 +165,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 
             <?php foreach($resultado as $row)   {     ?>
-                <div class="carta  ">
+                <div class="carta <?php echo $row['unidad_producto'] ?>  ">
                         <?php
                     $id = $row["id_producto"];
                     $imagen = "../img/productos/" . $id .  "/producto.PNG";

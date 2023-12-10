@@ -159,7 +159,7 @@ combo__Radio.addEventListener("change", () => {
 
 libras__Radio.addEventListener("change", () => {
     if (libras__Radio.checked) {
-        filterBoxes("libras");
+        filterBoxes("libra");
     }
 });
 
