@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-image: url(../img/campo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.logoo{
+    display: flex;
+    justify-content: center;    
+}
+
+.logoo img{
+    width: 200px;
+    height: auto;
+}
+
+
+
+.cabeza_registrar{
+    /* color: #6fa622; */
+    /* color: rgb(117, 165, 53); */
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0px 0px 0px; 
+    font-size: 20px;
+}
+
+.contenedor_register_iniciar {
+	/* background-color: #fff; */
+    background-color: rgb(27,27,29);
+	border-radius: 7px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
+}
+
+.form {
+	padding: 30px 40px;	
+}
+
+.form_section{
+    margin-bottom: 30px;
+	/* padding-bottom: 20px; */
+	position: relative;
+}
+
+
+.form_section label{
+    color: #f7f7f7;
+}
+
+.form input{
+    /* border: 2px solid #f0f0f0; */
+    /* border: 1px solid rgb(255, 255, 255); */
+    border: 1px solid #ccc;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 8px 8px;
+	width: 100%; 
+    /* background-color: rgb(93,93,95); */
+    background-color: #444950;
+    outline: none; 
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.form input::placeholder{ 
+    color:rgb(107,113,111)
+    /* color: gray; */
+    /* color: #bec3c9; */
+    
+}
+
+/* #444950 */
+
+
+.form button{
+    /* padding: 3px 83px 3px 83px; */
+    padding: 5px 10px;
+	width: 100%; 
+    background-color: #33a715;
+    border-radius: 6px;
+    color: #f7f7f7; 
+    cursor: pointer;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.form button:hover{
+    /* background-color: #6fa622; */
+    background-color: #39bd18;
+    
+}
+
+.pregunta{
+    color: #B9BDB8;
+    margin: 0 12%;
+}
+
+.sub_pregunta{
+    text-decoration: none;
+    color: #95a34e;
+}
+
+
+.sub_pregunta:hover{
+    color: #aabf44;
+}
+
+
+
+
+.error_iniciar_session{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    margin: 0 10%;
+    border-radius: 10px;
+}
+
+.error_iniciar_session em{
+    color: white;
+}
+
+
+ 
+
+.form input.is-invalid{
+    border: 2px solid rgb(125,20,21); 
+    /* background-color: transparent; */
+}
+
+/* .is-invalid:focus {
+box-shadow: 0 0 10px #ff1717; 
+border: 5px solid rgba(223, 33, 36, 0.336); 
+} */
+
+.form input.is-valid {
+    border: 2px solid rgb(25,135,84);
+}
+
+.form input.is-valid:focus {
+border-color: darkgreen; /* Cambia el color del borde a un verde más oscuro cuando está en foco */
+}

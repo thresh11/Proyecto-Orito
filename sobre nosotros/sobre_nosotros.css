@@ -12,18 +12,18 @@ body{
     /* text-align: center; */
     margin: auto;
 }
-header{
+/* header{
     width: 100%;
     height: 690px;
     background-image: url(img/Diapositiva1.PNG);
     background-size: cover;
     opacity: 90%;
     background-attachment: fixed ;
-    /* position: relative; */
-}
+  
+} */
 
 
-@media screen and (max-width: 400px){
+/* @media screen and (max-width: 400px){
     header{
         width: 100vw;
         height : 40vh;
@@ -32,10 +32,81 @@ header{
         background-color: #5fd207;
         
 
-    }
+    } 
+} */
 
-    
+
+
+
+
+.swiper {
+    width: 100%;
+    height: 500px;
+    z-index: 1; 
+  }
+
+  .swiper-wrapper img{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+
+
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    --swiper-navigation-size: 29px;
+    --swiper-theme-color: #1f4404;  
+    background-color: aliceblue; 
+    /* background-color: #d7b418; */
+    height: 70px;
+    width: 50px;
+    margin-top: -35px;
+} 
+
+.swiper .swiper-button-prev{
+    border-radius: 0 65px 65px 0;
+    left: -10px; 
+} 
+.swiper .swiper-button-next{
+    border-radius: 65px 0 0 65px;
+    right: -10px; 
 }
+
+.swiper .swiper-pagination{
+    --swiper-pagination-color: rgb(255, 255, 255);
+
+}
+
+
+@media (max-width: 1000px) {
+    .swiper-wrapper img{
+        height: 310px; 
+      }  
+      .swiper {
+        height: 310px;  
+      }
+
+    .swiper .swiper-button-prev,
+    .swiper .swiper-button-next {
+    --swiper-navigation-size: 19px;
+    --swiper-theme-color: #409a00;  
+    background-color: aliceblue; 
+    /* background-color: #d7b418; */
+    height: 60px;
+    width: 40px;
+    margin-top: -35px;
+} 
+
+}
+
+
+
+
+
+
+
 
 .barra{
     width: 100%;
@@ -506,6 +577,7 @@ footer p a {
 }
 
 /* footer end */
+
 
 
 

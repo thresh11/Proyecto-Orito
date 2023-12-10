@@ -39,12 +39,22 @@ function loadEventListenrs() {
     containerBuyCart.addEventListener('click', deleteProduct);
 }
 
+// function addProduct(e) {
+    
+//     if (e.target.classList.contains('btn-agregar-carito')) {
+//         e.preventDefault();
+//         const selectProduct = e.target.parentElement;
+//         readTheContent(selectProduct);
+//         updateCart();
+//     }
+// }
+
 function addProduct(e) {
-    e.preventDefault();
+    // Evita el comportamiento predeterminado solo si el clic proviene de un botón con la clase 'btn-agregar-carito'
     if (e.target.classList.contains('btn-agregar-carito')) {
+        e.preventDefault();
         const selectProduct = e.target.parentElement;
         readTheContent(selectProduct);
-        updateCart();
     }
 }
 
@@ -210,3 +220,14 @@ const swiper = new Swiper('.swiper', {
     //   el: '.swiper-scrollbar',
     // },
   });
+
+    function toggleDropdown() {
+        var dropdownContent = document.getElementById("ff");
+        if (dropdownContent.style.display === "none") {
+            dropdownContent.style.display = "block";
+        } else {
+            dropdownContent.style.display = "none";
+        }
+    }
+
+  
