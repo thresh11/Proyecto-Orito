@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <link rel="stylesheet" href="estilos_inicio_sesion.css">
+    <script src="js/validation.js" defer></script>
+    <!-- <link rel="stylesheet" href="preuvas.css"> -->
+    <title>Signup</title>
+</head>
+<body>
+    <section class="contenedor_register_iniciar">
+        <div class="logoo">
+            <a href="../inicio/inicio.php"><img src="../img/logo_pnj.png" alt="logo" class="logo"></a>
+        </div>
+          
+            <div class="cabeza_registrar">
+                <h1 class="register_iniciar_sesion">Resgistrar</h1>
+            </div>
+            <form action="process-signup.php" method="post" id="signup" class="form" novalidate>
+                    <div class="form_section">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name" placeholder="Digite su nombre">
+                    </div>
+                    
+                    <div class="form_section">
+                        <label for="last_name">Apellido</label>
+                        <input type="text" name="last_name" id="last_name" placeholder="Digite su apellido">
+                    </div>
+
+                    <div class="form_section">
+                        <label for="cel">telefono</label>
+                        <input type="tel" name="cel" id="cel" placeholder="Digite su numero telefonico">
+                    </div>
+
+                    <div class="form_section">
+                        <label for="email">Correo electronico</label>
+                        <input type="email" name="email" id="email" placeholder="Digite su correo electronico"> 
+                    </div>
+
+                    <div class="form_section">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" placeholder="Digite contraseña"> 
+                    </div> 
+
+                <button type="submit" class="button">Registrar</button>
+                <p class="pregunta">¿Ya tienes cuenta? <span><a href="login.php" class="sub_pregunta">inicia sesion</a></span></p>
+
+                </form>     
+    </section>      
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+ <!-- <h1>Registrar</h1>
+    <form action="process-signup.php" method="post" id="signup" novalidate>
+        <div>
+            <label for="name">nombre</label>
+            <input type="text" id="name" name="name" >
+        </div>
+        
+        <div>
+            <label for="email">correo electronico</label>
+            <input type="email" id="email" name="email">
+        </div>
+        
+        <div>
+            <label for="password">contraseña</label>
+            <input type="password" id="password" name="password">
+        </div>
+        
+        <div>
+            <label for="password_confirmation">confirmar contraseña</label>
+            <input type="password" id="password_confirmation" name="password_confirmation">
+        </div>
+        
+        <button>Registrarse</button>
+    </form> -->
+
+

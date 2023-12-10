@@ -50,6 +50,119 @@ header nav ul li a{
     /* transition: color 1000ms; */
 }
 
+
+
+
+
+
+
+header nav ul li a.uc_superior a{
+    margin-right: initial;
+    color: initial;
+}
+
+header nav ul li a:hover.uc_superior a{
+    color: initial;
+}
+
+.perfil {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;  
+}
+
+.perfil .nombre_usuario{
+    cursor: pointer;
+}
+
+
+.ff{
+    display: none;
+    position: fixed;
+    /* background-color: #5a5956; */
+    /* background-color: rgb(94, 94, 94); */
+    background-color: #ffffff;
+    width: 340px;
+    height: 170px;
+
+    z-index: 1;
+    top: 10%; 
+    left: 70%; 
+    border-radius: 4px;
+}
+
+.uc_superior{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #6fa622; */
+    background-color: #486c16;
+    width: 97.5%;
+    height: 20%;
+    padding: 5px;
+}
+
+.uc_superior h3{
+    margin: 0;
+    color: #fff;
+}
+
+.uc_superior span{
+    color: #41512a;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.uc_superior a{
+    /* color: #1f4404; */
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.uc_posterior{
+    /* background-color: #0c6c17; */
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.a{
+    /* background-color: blue; */
+    width: 40%;
+    height: 100%;
+}
+
+.a img{
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+
+.b{
+    /* background-color: rgb(255, 0, 208); */
+    width: 60%;
+    height: 100%;
+}
+
+.b h3{
+    margin: 20px 0px 0px 10px;
+    /* color: #fff; */
+}
+
+.b h5{
+    margin: 0px 0px 0px 10px;
+    /* color: #fff; */
+}
+
+
+/* 
+.perfil:hover .ff {
+    display: block;
+} */
+
 header nav ul li a:hover{
     color: rgb(0, 255, 89);
 }
@@ -69,7 +182,6 @@ header nav ul li a:hover{
 .navegador a{
     text-decoration: none;
 } 
-
 
 
 /* todo este bloque de codigo es para ver la barra navegadora para celulares */
@@ -252,30 +364,25 @@ p.author a {
 /* este bloque es para los estilos del carrusel */
 .swiper {
     width: 100%;
-    height: 300px;
+    height: 500px;
     z-index: 1; 
   }
 
   .swiper-wrapper img{
-    height: 255px;
+    height: 500px;
     width: 100%;
     object-fit: cover;
   }
 
-@media (min-width: 1024px) {
-    .swiper-wrapper img{
-    height: 500px; 
-  }  
-  .swiper {
-    height: 500px;  
-  }
-}
+
+
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
     --swiper-navigation-size: 29px;
     --swiper-theme-color: #1f4404;  
     background-color: aliceblue; 
+    /* background-color: #d7b418; */
     height: 70px;
     width: 50px;
     margin-top: -35px;
@@ -292,6 +399,28 @@ p.author a {
 
 .swiper .swiper-pagination{
     --swiper-pagination-color: rgb(255, 255, 255);
+
+}
+
+
+@media (max-width: 1000px) {
+    .swiper-wrapper img{
+        height: 310px; 
+      }  
+      .swiper {
+        height: 310px;  
+      }
+
+    .swiper .swiper-button-prev,
+    .swiper .swiper-button-next {
+    --swiper-navigation-size: 19px;
+    --swiper-theme-color: #409a00;  
+    background-color: aliceblue; 
+    /* background-color: #d7b418; */
+    height: 60px;
+    width: 40px;
+    margin-top: -35px;
+} 
 
 }
 
@@ -367,6 +496,8 @@ p.author a {
 
 .carta img{
     width: 100%;
+    /* height: 500px; */
+    object-fit: cover;
 }
 
 .carta .contenido_texto{
@@ -437,69 +568,7 @@ p.author a {
 }
 
 
-/* este bloque es para el diseño del pie de paigina */
-.footer_abajo{
-    background-color: rgb(255, 255, 255);
-}
-
-footer{
-    padding: 50px;
-    background-color: rgb(0, 0, 0);
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    left: 0;
-    right: 0;
-}
-
-footer h1{
-    display: flex;
-    justify-content: center;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.footer_abajo .color_0{
-    color: #41512a;
-    
-}
-
-footer p a {
-    text-decoration: none;
-    color: white;
-}
-
-
-.informacion{
-    display: flex;
-    justify-content: space-between;
-    margin: 0% 30%;
-}
-
-
-.logos{
-    display: flex;
-    justify-content: space-between;
-    margin: 0% 40%;
-    margin-top: 15px;
-}
-
-.logos img{
-    width: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* este bloque es de estilo para la galeria de imagenes */
 /* titulo */
 .titulo_2{
     display: flex;
@@ -512,125 +581,6 @@ footer p a {
 .titulo_2 span{
     color: #537f14;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.imagenes{
-    display: flex;
-    margin: 10px 0;
-    justify-content: center;
-    background-color: #0c6c2c;
-    height: 500px;
-}
-
-.imagenes img{
-    border-radius: 20px;
-    object-fit: cover;
-}
-
-.imagenes_2{
-    display: flex;
-    width: 100%;
-    height: 60%;
-    
-}
-
-
-.img_2{
-    width: 50%;
-    /* height: 300px; */
-    margin-right: 10px;
-}
-
-
-
-.img_1{
-    width: 35%;
-    /* height: 500px; */
-    height: auto;
-    margin-right: 40px;
-}
-
-.img_4{
-    /* background-color: #14b349; */
-    /* width: auto; */
-    /* height: 300px; */
-    width: 100%;
-    height: 38%;
-    /* height: auto; */
-    margin-top: 2%;
-}
-
-
-    
-
-
-
-
-.con_imagenes {
-    display: flex;
-    /* width: 100vw; */
-    height: 100vh;
-    padding: 10px;
-    box-sizing: border-box;
-    margin: 0 100px;
-}
-
-.con_imagenes img {
-    border-radius: 50px;
-    object-fit: cover;
-}
-
-.left img, .right-top img, .right-bottom img {
-    margin: 10px; 
-    width: calc(100% - 20px);
-    height: calc(100% - 20px); 
-}
-
-.left {
-    width: 50%;
-    height: 70%;
-}
-.right {
-    width: 100%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-}
-.right-top {
-    width: 100%;
-    height: 50%;
-    display: flex;
-}
-.right-bottom {
-    width: 100%;
-    height: 50%;
-}
-
-@media screen and (max-width:820px){
-    .con_imagenes {    
-        margin: 0 10px;
-    }
-}
-
-/* @media screen and (max-width:640px){
-   body{
-    background-color: #0c6c2c;
-   }
-} */
-
 
 .galeria_img{
     width: 90%;
@@ -692,7 +642,7 @@ footer p a {
     display: block;
     height: 500px;
     margin-right: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     }
 
     .img_grande{
@@ -730,6 +680,67 @@ footer p a {
     }
     
 }
+
+/* este bloque es para el diseño del pie de paigina */
+.footer_abajo{
+    background-color: rgb(255, 255, 255);
+}
+
+footer{
+    padding: 50px;
+    background-color: rgb(0, 0, 0);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    left: 0;
+    right: 0;
+}
+
+footer h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer_abajo .color_0{
+    color: #41512a;
+    
+}
+
+footer p a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.informacion{
+    display: flex;
+    justify-content: space-between;
+    margin: 0% 30%;
+}
+
+
+.logos{
+    display: flex;
+    justify-content: space-between;
+    margin: 0% 40%;
+    margin-top: 15px;
+}
+
+.logos img{
+    width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

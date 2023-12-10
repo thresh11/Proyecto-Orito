@@ -203,6 +203,7 @@ if ($id == '' || $token == ''){
 					<button class="btn-add-to-cart">
 						<i class="fa-solid fa-plus"></i>
 						Añadir al carrito
+						<!-- <a href="" data-id="<?php echo $row ['id_producto'];?>" class="btn-agregar-carito">Añadir al carrito</a> -->
 					</button>
 				</div>
 

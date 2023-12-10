@@ -19,6 +19,10 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="productos2.css">
     <script defer src="productos2.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 </head>
 <body>
 <header>
@@ -61,6 +65,35 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
         </div>     
     </header>
 
+    <div class="barra"></div>
+
+<section>
+    <div class="carrusel">
+        <!-- Slider main container -->
+    <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="../img/0.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="../img/aguacate-1.jpg" alt=""></div>
+    <div class="swiper-slide"><img src="../img/aguacate-2.jpg" alt=""></div>
+    
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    </div>
+</section>
+
+
+    
 
     <div class="titulooo"> 
         <h1>Nuestros <span>Productos</span></h1>
@@ -179,7 +212,6 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                         <a href="../prueva/index2.php?id_producto=<?php echo $row ["id_producto"]; ?>&token=<?php echo hash_hmac('sha1', $row["id_producto"], KEY_TOKEN); ?>" class="btn-conoce-mas">Conoce mas!</a> 
                         <a href="" data-id="<?php echo $row ['id_producto'];?>" class="btn-agregar-carito">Añadir al carrito</a>                
                 </div>
-
             <?php  } ?>
 
 

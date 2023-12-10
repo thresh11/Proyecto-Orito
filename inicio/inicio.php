@@ -1,16 +1,32 @@
 <?php
 
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    $mysqli = require __DIR__ . "/../iniciar_registrar/database.php"; 
+    // $sql = "SELECT * FROM user WHERE id = {$_SESSION["user_id"]}";     
+    $sql = "SELECT * FROM usuarios WHERE id = {$_SESSION["user_id"]}";     
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?>
+
+<?php
+
 require '../config/database.php';
 require '../config/config.php';
 $db = new Database();
 $con = $db->conectar();
 
-$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto  FROM productos WHERE activo =1");
+$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto , unidad_producto FROM productos WHERE activo =1");
 $sql->execute();
 $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +36,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     <title>Orito Verde</title>
     <link rel="stylesheet" href="inicio.css">
     <script defer src="inicio.js"></script>
-    <!-- <script defer src="../carrito/pruvas/prueva.js"></script> -->
+   
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
@@ -36,9 +52,48 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                 <ul>
                     <div class="desaparecer">
                         <li><a href="inicio.html">Inicio</a></li>
-                        <li><a href="../sobre nosotros/sobrenosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
                         <li><a href="../productos/productos2.php">productos</a></li>
-                        <li><a href="../iniciar_registrar/iniciar_sesion.html">Iniciar Sesión</a></li>
+                        <?php if (isset($user)): ?>
+                            <li class="perfil">
+                                <span class="material-symbols-outlined">account_circle</span>    
+                                <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
+                                        <li class="ff" id="ff">
+                                            <!-- <div id="ff"> -->
+                                                 <div class="uc_superior">
+                                                    <h3><span>o</span>rito verde</h3>
+                                                    <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar seccion</a>
+                                                </div>
+                                                <div class="uc_posterior">
+                                                    <div class="a"><img src="../img/icono_user.jpg" alt=""></div>  
+                                                    <div class="b">
+                                                        <h3><?= htmlspecialchars($user["nombre"]) ?></h3>
+                                                        <h5><?= htmlspecialchars($user["correo"]) ?></h5>
+                                                    </div>      
+                                                </div>
+                                            <!-- </div>        -->
+                                        </li>          
+                            </li>
+                    </div>
+                        <!-- <li class="perfil">
+                            <span class="material-symbols-outlined">account_circle</span>    
+                            <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["name"]) ?></span>
+
+                            <li class="ff">
+                                <div class="uc_superior">
+                                    <h4><span>o</span>rito verde</h4>
+                                    <a href="../logout.php" class="btn-cerrar-session">Cerrar seccion</a>
+                                </div>
+                                <div class="uc_posterior">
+                                 
+                                </div>
+                                
+                            </li> 
+                        </li> -->
+                            <?php else: ?>
+                                <li><a href="../iniciar_registrar/login.php">inicia session</a></p>
+                            <?php endif; ?>
+                        <!-- <li><a href="../iniciar_registrar/iniciar_sesion.html">Iniciar Sesión</a></li> -->
                     </div>
                         <li class="icon_menu">
                             <a href="#"><img src="../img/menu.svg" alt="menu"></a>
@@ -75,8 +130,8 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"><img src="../img/aguacate-1.jpg" alt=""></div>
         <div class="swiper-slide"><img src="../img/0.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../img/aguacate-1.jpg" alt=""></div>
         <div class="swiper-slide"><img src="../img/aguacate-2.jpg" alt=""></div>
         
         </div>
@@ -110,7 +165,9 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
     <section class="container">
         <div class="products">
-        <?php foreach($resultado as $row)   {     ?>
+        <?php 
+        $contador = 0;
+        foreach($resultado as $row)   {  ?>
                 <div class="carta">
                         <?php
                     $id = $row["id_producto"];
@@ -122,15 +179,17 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                     <h5>mas vendido</h5>
                     <img src="<?php  echo $imagen; ?>" alt="foto" >
                     <div class="contenido_texto">
-                        <h1 class="titulo"><?php  echo $row ['nombre_producto'];?></h1>
+                        <h1 class="titulo"><?php  echo $row ['nombre_producto']; $contador++;?></h1>
                         <p><?php echo $row ['unidad_producto']; ?></p>
                         <p class="precio">$<span><?php echo number_format( $row ['precio_producto'], 0, ',','.' );?></span> pesos</p> 
                     </div>
-                        <a href="../ventana_de_productos/index.php?id_producto=<?php echo $row ["id_producto"]; ?>&token=<?php echo hash_hmac('sha1', $row["id_producto"], KEY_TOKEN); ?>" class="btn-conoce-mas">Conoce mas!</a> 
-                        <a href="" data-id="<?php echo $row ['id_producto'];?>" class="btn-agregar-carito">Añadir al carrito</a>                
+                    <a href="../prueva/index2.php?id_producto=<?php echo $row ["id_producto"]; ?>&token=<?php echo hash_hmac('sha1', $row["id_producto"], KEY_TOKEN); ?>" class="btn-conoce-mas">Conoce mas!</a> 
+                    <a href="" data-id="<?php echo $row ['id_producto'];?>" class="btn-agregar-carito">Añadir al carrito</a>                
                 </div>
-
-            <?php  } ?>
+                    
+            <?php if ($contador == 3) {
+                break;
+            } } ?>
             <!-- <div class="carta">
                     <h5>mas vendido</h5> 
                     <img src="../img/brawni_almendras2-removebg-preview.png" alt="brawni_almendras">
@@ -170,21 +229,6 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     <div class="titulo_2">
         <h1><span>Disfruta</span> de las delicias agrícolas con orito verde</h1>
     </div>
-    
-    <!-- <section class="imagenes">
-            <img class="img_1" src="../img/img_5.jpeg" alt="">
-        <div class="imageness">   
-            <div class="imagenes_2">
-                <img class="img_2" src="../img/img_3.jpeg" alt="">
-                <img class="img_2" src="../img/img_4.jpeg" alt="">
-
-            </div>  
-                <img class="img_4" src="../img/img_2.jpeg" alt="">  
-        </div>
-
-    </section> -->
-
-
         <section class="galeria_img">
             <div class="img_grande"><img src="../img/img_5.jpeg" alt=""></div>
             <div class="lateral_derecho">
@@ -195,29 +239,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                 <div class="img_pd"><img src="../img/img_2.jpeg" alt=""></div>
             </div>
         </section>
-    
-
-
-
-    <!-- <div class="titulo_2">
-        <h1><span>Disfruta</span> de las delicias agrícolas con orito verde</h1>
-    </div>
-    <div class="con_imagenes">
-        <div class="left">
-            <img src="../img/img_5.jpeg" class="image">
-        </div>
-        <div class="right">
-            <div class="right-top">
-                <img src="../img/img_4.jpeg" class="image">
-                <img src="../img/img_3.jpeg" class="image">
-            </div>
-            <div class="right-bottom">
-                <img src="../img/img_2.jpeg" class="image">
-            </div>
-        </div>
-    </div> -->
-
-
+        
     <div class="footer_abajo">
         <footer>
             <h1><span class="color_0">O</span>rito verde</h1>
@@ -233,8 +255,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                         <img src="../img/logos/youtube.png" alt="logo_youtube">
                     </div>
         </footer>
-    </div>
-
+    </div>       
     <!-- ipconfig -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </body>
