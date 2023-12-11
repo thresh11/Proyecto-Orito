@@ -230,4 +230,26 @@ const swiper = new Swiper('.swiper', {
         }
     }
 
+
+    // Selecciona los elementos
+var iconoMenu = document.querySelector('.icon_menu');
+var contenidoMenuR = document.querySelector('.menuR');
+
+window.onload = function() {
+    if (window.getComputedStyle(contenidoMenuR).display === 'flex') {
+        contenidoMenuR.style.maxHeight = '500px';
+    } else {
+        contenidoMenuR.style.maxHeight = '0px';
+    }
+};
+
+iconoMenu.addEventListener('click', function() {
+    if (contenidoMenuR.style.maxHeight === '0px') {
+        contenidoMenuR.style.maxHeight = '500px';
+    } else {
+        contenidoMenuR.style.maxHeight = '0px';
+    }
+});
+
+
   

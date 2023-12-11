@@ -37,6 +37,11 @@ body{
 
 
 
+.barra{
+    width: 100%;
+    height: 90px;
+    background-color: #000000;
+}
 
 
 .swiper {
@@ -108,11 +113,6 @@ body{
 
 
 
-.barra{
-    width: 100%;
-    height: 90px;
-    background-color: #000000;
-}
 
 .desaparecer a{
     color: #fff;

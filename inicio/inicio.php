@@ -34,7 +34,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orito Verde</title>
-    <link rel="stylesheet" href="inicio.css">
+    
     <script defer src="inicio.js"></script>
    
     <link
@@ -42,9 +42,10 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+    <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
+
     <!-- hola mundo -->
     <header class="navegador">
         <a href="../inicio/inicio.html"><h1><span class="color_0">O</span>rito verde</h1></a>
@@ -54,56 +55,32 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                         <li><a href="inicio.html">Inicio</a></li>
                         <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
                         <li><a href="../productos/productos2.php">productos</a></li>
-                        <?php if (isset($user)): ?>
-                            <li class="perfil">
-                                <span class="material-symbols-outlined">account_circle</span>    
-                                <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
+                            <?php if (isset($user)): ?>
+                                <li class="perfil">
+                                    <span class="material-symbols-outlined">account_circle</span>    
+                                    <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
                                         <li class="ff" id="ff">
-                                            <!-- <div id="ff"> -->
-                                                 <div class="uc_superior">
-                                                    <h3><span>o</span>rito verde</h3>
-                                                    <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar seccion</a>
-                                                </div>
-                                                <div class="uc_posterior">
-                                                    <div class="a"><img src="../img/icono_user.jpg" alt=""></div>  
+                                            <div class="uc_superior">
+                                                <h3><span>o</span>rito verde</h3>
+                                                <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar seccion</a>
+                                            </div>
+                                            <div class="uc_posterior">
+                                                <div class="a">
+                                                    <img src="../img/icono_user.jpg" alt="">
+                                                </div>  
                                                     <div class="b">
                                                         <h3><?= htmlspecialchars($user["nombre"]) ?></h3>
                                                         <h5><?= htmlspecialchars($user["correo"]) ?></h5>
-                                                    </div>      
-                                                </div>
-                                            <!-- </div>        -->
+                                                </div>      
+                                            </div>
                                         </li>          
-                            </li>
+                                </li>
                     </div>
-                        <!-- <li class="perfil">
-                            <span class="material-symbols-outlined">account_circle</span>    
-                            <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["name"]) ?></span>
-
-                            <li class="ff">
-                                <div class="uc_superior">
-                                    <h4><span>o</span>rito verde</h4>
-                                    <a href="../logout.php" class="btn-cerrar-session">Cerrar seccion</a>
-                                </div>
-                                <div class="uc_posterior">
-                                 
-                                </div>
-                                
-                            </li> 
-                        </li> -->
                             <?php else: ?>
                                 <li><a href="../iniciar_registrar/login.php">inicia session</a></p>
                             <?php endif; ?>
-                        <!-- <li><a href="../iniciar_registrar/iniciar_sesion.html">Iniciar Sesión</a></li> -->
-                    </div>
-                        <li class="icon_menu">
-                            <a href="#"><img src="../img/menu.svg" alt="menu"></a>
-                                <ul class="contenido_vertical">
-                                    <li><a href="inicio.html">Inicio</a></li>
-                                    <li><a href="../sobre nosotros/sobrenosotros.html">Sobre Nosotros</a></li>
-                                    <li><a href="../productos/productos.html">Productos</a></li>
-                                    <li><a href="../iniciar_registrar/registrar.html">Iniciar Sesión</a></li>
-                                </ul>
-                        </li>
+                    <!-- </div> -->
+                        <li class="icon_menu"><a href="#"><img src="../img/menu.svg" alt="menu"></a></li>
                 </ul>
                     <div class="header-section container">
                         <img onclick="verCarrito(this)" class="cart" src="../img/carrito.png" alt="carrito">
@@ -121,8 +98,16 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             </nav>  
     </header>
 
-<div class="barra"></div>
+    
 
+<div class="barra"></div>
+<div class="menuR">
+    <div class="lista">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="../productos/productos2.php">productos</a></li>
+    </div> 
+</div>
     <section>
         <div class="carrusel">
             <!-- Slider main container -->
