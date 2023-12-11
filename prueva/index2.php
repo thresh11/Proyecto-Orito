@@ -303,11 +303,45 @@ if ($id == '' || $token == ''){
 		</section>
 
 
-		<footer>
-			<p>¡Si te gusta lo que haces, ni los lunes te quitaran LA SONRISA!</p>
-			<br>
-			<P>Gracias por apoyar este emprendimiento</P>
-		</footer>
+		<div class="footer_abajo">
+        <footer>
+            <h1><span class="color_0">O</span>rito verde</h1>
+            
+
+            <!-- Nuevo contenedor para los elementos del acordeón -->
+            <div class="accordion_container">
+                <div class="accordion_item" id="info_accordion">
+                    <h2><a>ACERCA DE ORITO</a></h2>
+                    <div class="informacion_footer">
+                        <p><a href="../redaccion/terminos_condiciones.html"><b>terminos del servicio</b></a></p>
+                        <p><a href="../redaccion/politicas_privadas.html"><b>Política de privacidad</b></a></p>
+                        <p><a href="../sobre nosotros/sobre_nosotros.html"><b>sobre nosotros</b></a></p>
+                    </div>
+                </div>
+                <div class="accordion_item" id="contact_accordion">
+                    <h2><a >CONÉCTATE CON NOSOTROS</a></h2>
+                    <div class="contactanos_footer">
+                        <p>Disponible todos los días de 8:00 a.m. <br> a 6:00 p.m. QUINDIO - COLOMBIA</p>
+                        <p>WhatsApp: (+57) 314 300 4662</p>
+                        <p>E-MAIL: oritoverde@gmail.com </p>
+                    </div>
+                </div>
+                <div class="accordion_item" id="follow_accordion">
+                    <h2><a >SíGUENOS</a></h2>
+                    <div class="mensaje_footer">
+                        <p>¡Si te gusta lo que haces, ni los lunes <br> te quitarán LA SONRISA! <br><br>
+                        Gracias por apoyar este emprendimiento</p>
+                        <div class="logos">
+                            <img src="../img/logos/instagram_03.png" alt="logo_intagram">
+                            <img src="../img/logos/twitter.png" alt="logo_twitter">
+                            <img src="../img/logos/facebook.png" alt="logo_facebook">
+                            <img src="../img/logos/youtube.png" alt="logo_youtube">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 		<script
 			src="https://kit.fontawesome.com/81581fb069.js"
@@ -386,30 +420,29 @@ let valueByDefault = parseInt(inputQuantity.value);
 
 		</script>
 
-		<div class="blue"></div>
+<div class="blue"></div>
 
-<div id="formulario" onclick="toggleCuestionario()"> ?</div>
+<div id="formulario" onclick="toggleCuestionario()">?</div>
 
 <div id="cuestionario">
     <div id="cerrar" onclick="cerrarCuestionario()">X</div>
-	<h4>Formulario</h4>
-					<br>
-					<label for="Nombre">Nombre:</label>
-                <input type="text" name="Nombre" required><br>
-        
-                <label for="Correo">Correo:</label>
-                <input type="email" name="Correo" required><br>
-			
-        
-                <label for="Telefono">Telefono:</label>
-                <input type="text" name="Telefono" required><br>
-        
-                <label for="Mensaje">Mensaje:</label>
-                <textarea name="Mensaje" required></textarea><br>
-        
-                <input type="submit" value="Enviar">
+    <h4>Comentamos</h4>
+    <form>
+        <label for="Nombre">Nombre:</label>
+        <input type="text" name="Nombre" required><br>
+
+        <label for="Correo">Correo:</label>
+        <input type="email" name="Correo" required><br>
+
+        <label for="Telefono">Telefono:</label>
+        <input type="text" name="Telefono" required><br>
+
+        <label for="Mensaje">Mensaje:</label>
+        <textarea name="Mensaje" required></textarea><br>
+
+        <input type="submit" value="Enviar">
     </form>
-	</div>
 </div>
+
 	</body>
 </html>

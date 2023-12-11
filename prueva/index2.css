@@ -229,6 +229,9 @@ p.author a {
 
 
 
+/* footer */
+
+
 
 .footer_abajo{
     background-color: rgb(255, 255, 255);
@@ -248,10 +251,12 @@ footer h1{
     justify-content: center;
     color: white;
     margin-bottom: 20px;
+    margin-top: -1%;
+    font-size: 40px;
 }
 
 .footer_abajo .color_0{
-    color: #41512a;
+    color:  #537f14;
     
 }
 
@@ -259,27 +264,122 @@ footer p a {
     text-decoration: none;
     color: white;
 }
+footer p  {
+    color: white;
+    font-size: 17px;
+}
+
+footer h2 a  {
+    text-decoration: none;
+    color: white;
+    font-family:titulo ;
+    color:  #537f14;
+    margin-left: 80px;
+}
 
 
-.informacion{
+.todo_footer{
     display: flex;
     justify-content: space-between;
-    margin: 0% 30%;
+}
+
+.informacion_footer{
+    display: block;
+    justify-content: space-between;
+    margin: 0% 0%;
+    margin-left: 80px;
+    /* background-color: #0c6c2c; */
+}
+
+.contactanos_footer{
+    display: block;
+    justify-content: space-between;
+    margin-left: 80px;
+    /* background-color: #076ecd; */
+}
+
+.mensaje_footer{
+    display: block;
+    justify-content: space-between;
+    margin-right: 80px;
+    /* color:white; */
+    /* background-color: #0acd07; */
 }
 
 
 .logos{
     display: flex;
     justify-content: space-between;
-    margin: 0% 40%;
-    margin-top: 15px;
+    margin: 0% 10%;
+    margin-top: 10%;
 }
 
 .logos img{
     width: 20px;
 }
 
+.accordion_container {
+    display: flex;
+    justify-content: space-between;
+}
 
+/* ... (Estilos existentes) ... */
+
+.todo_footer_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .todo_footer {
+        display: none;
+    }
+    .accordion_container {
+    display: block;
+    
+}
+
+footer h2 a {
+    margin: 0;
+}
+
+    .todo_footer_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .accordion_item {
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: #333;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .accordion_item h2 {
+        padding: 10px;
+        margin: 0;
+        cursor: pointer;
+        color: white;
+    }
+
+    .accordion_item div {
+        padding: 10px;
+        display: none;
+    }
+
+    .accordion_item.active div {
+        display: block;
+    }
+}
+
+
+
+
+
+
+/* end footer */
 
 
 
@@ -408,7 +508,7 @@ footer p a {
 
 .todo {
 
-	max-width: 1200px;
+	max-width: 1300px;
 	margin: 0 auto;
     box-sizing: border-box;
 }
@@ -684,6 +784,8 @@ main {
     justify-content: space-between;
     background-color:white;
     margin-top: 60px;
+    margin-bottom: 60px;
+
 
 }
 
@@ -696,8 +798,8 @@ main {
     margin-bottom: 40px;
     border-radius: 20px;
     /* padding: 20px; */
-    margin: 20px 0px; 
-    width: 20vw; 
+    margin: 0px 0px; 
+    width: 19vw; 
 }
 
 .carta img{
@@ -781,86 +883,73 @@ main {
 
 
 
-footer {
-	padding: 30px;
-	background-color: #eee;
-	margin-top: 50px;
-	color: #222;
-	text-align: center;
-}
-
-.boton-conta{
-    margin-top: 200px ;
-  }
-  
-  .butt {
-    background-image: url(./img/imagen_formulario.png);
-    border: none;
-    border-radius: 40%;
-    height: 60px;
-    width: 60px;
-	position: relative ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
-  }
-  
-  .but {
-    background-image: url(./img/luces.png);
-	text-align: center;
-    background-size: 170%;
-    width: 300px;
-    padding: 30px;
-    border: 5px #fff solid;
-    border-radius: 40px;
-    transition: all 500ms ease;
-	margin-bottom: 20px;
-  }
-  
-  #myForm{
-	bottom: 20px;
-  }
-
-
 
 
   /* formulario */
 
-
   #formulario {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	width: 50px;
-	height: 50px;
-	background-color: #3493db;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 50px;
-	font-size: 18px;
-	color: #ffffff;
-	cursor: pointer;
-	z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50; /* Verde principal */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1000;
+    
 }
 
 #cuestionario {
-	display: none;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 20px;
-	background-color: #ffffff;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	z-index: 1001;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #eaf7e1; /* Verde más claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    z-index: 1001;
 }
 
 #cerrar {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	cursor: pointer;
-	color: #333;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+label {
+    color:#395b0c;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color:#6fa622;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #537f14;;
 }
 /* and  formulario */
 
