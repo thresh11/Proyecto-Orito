@@ -65,3 +65,25 @@ const swiper = new Swiper('.swiper', {
     // },
   });
 
+
+
+  // footer
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion_item');
+
+    accordionItems.forEach(item => {
+        const title = item.querySelector('h2');
+        title.addEventListener('click', () => {
+            accordionItems.forEach(innerItem => {
+                if (innerItem !== item) {
+                    innerItem.classList.remove('active');
+                }
+            });
+            item.classList.toggle('active');
+        });
+    });
+});
+
+//end footer
+

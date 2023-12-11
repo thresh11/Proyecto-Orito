@@ -4,7 +4,7 @@ require '../config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto, unidad_producto  FROM productos WHERE activo =1");
+$sql = $con->prepare("SELECT id_producto, nombre_producto,  precio_producto, unidad_producto, categoria  FROM productos WHERE activo =1");
 $sql->execute();
 $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
@@ -32,17 +32,17 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                 <nav>
                     <ul>
                         <div class="desaparecer">
-                            <li><a href="inicio.html">Inicio</a></li>
-                            <li><a href="../sobre nosotros/sobrenosotros.html">Sobre Nosotros</a></li>
-                            <li><a href="../productos/productos2.php">productos</a></li>
+                            <li><a href="../inicio/inicio.php">Inicio</a></li>
+                            <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
+                            <li><a href="productos2.php">productos</a></li>
                             <li><a href="../iniciar_registrar/iniciar_sesion.html">Iniciar Sesión</a></li>
                         </div>
                             <li class="icon_menu">
                                 <a href="#"><span class="material-symbols-outlined" id="tamaño">Menú</span></a>
                                     <ul class="contenido_vertical">
-                                        <li><a href="inicio.html">Inicio</a></li>
-                                        <li><a href="../sobre nosotros/sobrenosotros.html">Sobre Nosotros</a></li>
-                                        <li><a href="../productos/productos.html">Productos</a></li>
+                                        <li><a href="../inicio/inicio.php">Inicio</a></li>
+                                        <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
+                                        <li><a href="productos2.php">Productos</a></li>
                                         <li><a href="../iniciar_registrar/registrar.html">Iniciar Sesión</a></li>
                                     </ul>
                             </li>
@@ -117,21 +117,12 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             <button onclick="mostrarDiv(1)"  class="filtro__texto__button"> Brownie</button>
 
                 <div id="div-1" class="div-oculto">
-                    <input type="checkbox" name="categoria" value="Brownie" id="BrownieRadio">Todos nuestros Brownies <br>
+                    <input type="radio" name="categoria" value="Brownie" id="BrownieRadio">Todos nuestros Brownies <br>
                     <input type="radio" name="categoria" value="Brownie_almendras" id="Brownie_almendras_radio"> Brownie de Almendras<br>
                     <input type="radio" name="categoria" value="Brownie_arroz" id="Brownie_arroz_radio">  Brownie de Arroz <br>
                     <input type="radio" name="categoria" value="Brownie_avena" id="Brownie_avena_radio">  Brownie de Avena
                 </div>
 
-
-            <button onclick="mostrarDiv(2)" class="filtro__texto__button"> Cajas de Brownies </button>
-
-                <div id="div-2" class="div-oculto">
-                    <input type="radio" name="categoria" value="cajas" id="cajas__Radio">Nuestras cajas de Brownies<br>
-                    <input type="radio" name="categoria" value="cajas_almendras" id="cajas_almendras_radio"> Caja de Brownie de Almendras<br>
-                    <input type="radio" name="categoria" value="cajas_arroz" id="cajas_arroz_radio">  Caja de Brownie de Arroz <br>
-                    <input type="radio" name="categoria" value="cajas_avena" id="cajas_avena_radio">  Caja de Brownie de Avena
-                </div>
                 
 
             <button onclick="mostrarDiv(3)" class="filtro__texto__button"> Ofertas</button>
@@ -145,9 +136,9 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             <button onclick="mostrarDiv(4)" class="filtro__texto__button"> Categorizado por</button>
 
                 <div id="div-4" class="div-oculto">
-                    <input type="radio" name="categoria" value="libras" id="libras__Radio"> libra<br>
+                    <input type="radio" name="categoria" value="libra" id="libras__Radio"> libra<br>
                     <input type="radio" name="categoria" value="kilo" id="kilo__Radio"> Kilo<br>
-                    <input type="radio" name="categoria" value="unidad" id="unidad__Radio"> Unidad<br>
+                    <input type="radio" name="categoria" value="unidad" id="unidad__Radio"> Unidades<br>
                     <input type="radio" name="categoria" value="litro" id="litro__Radio"> litro<br>
                     <input type="radio" name="categoria" value="gramos" id="gramos__Radio"> Gramos<br>
                     <input type="radio" name="categoria" value="otros" id="otros__Radio"> Otros<br>
@@ -167,7 +158,6 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
                 <div id="div-6" class="div-oculto">
                     <input type="radio" name="categoria" value="Brownie2" id="BrownieRadio2"> Nuestros Brownies<br>
-                    <input type="radio" name="categoria" value="cajas2" id="cajas__Radio2">Nuestras Cajas de Brownies<br>
                     <input type="radio" name="categoria" value="cafe" id="cafe__Radio"> Café tostado molido<br>
                     <input type="radio" name="categoria" value="miel" id="miel__Radio"> Miel<br>
                     <input type="radio" name="categoria" value="aromatica" id="aromatica__Radio"> Aromática<br>
@@ -175,11 +165,12 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                     <input type="radio" name="categoria" value="kumis" id="kumis__Radio"> Kumis sin azúcar<br>
                     <input type="radio" name="categoria" value="panela" id="panela__Radio"> Panela pulverizada<br>
                     <input type="radio" name="categoria" value="mantequilla" id="mantequilla__Radio"> Mantequilla de maní <br>
+                    <input type="radio" name="categoria" value="chocolate" id="cajas__Radio2">chocolate molido<br>
                 </div>
-            <!-- <input type="radio" name="categoria" value="brauni" id="brauniRadio"> braunis<br>
-            <input type="radio" name="categoria" value="combo" id="comboRadio"> combos<br>
-            <input type="radio" name="categoria" value="oferta" id="ofertaRadio"> oferta  -->
+                
         </div>
+        
+
 
 
 
@@ -195,7 +186,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 
             <?php foreach($resultado as $row)   {     ?>
-                <div class="carta  ">
+                <div class="carta <?php  echo $row['categoria'];   ?>  ">
                         <?php
                     $id = $row["id_producto"];
                     $imagen = "../img/productos/" . $id .  "/producto.PNG";
@@ -216,155 +207,6 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 
 
-                    <!-- <div class="carta Brownie Brownie_arroz 5.000 unidad Brownie2">
-                        <h5>mas vendido</h5>
-                            <img src="../img/brawni_arroz2-removebg-preview1.png" alt="browni_arroz">
-                        <div class="contenido_texto">
-                            <h1 class="titulo">Brawnie de aguacate con arroz</h1>
-                            <p>la unidad</p>
-                            <p class="precio">$<span>5.000</span> pesos</p>  
-                        </div>
-                            <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                            <a href="" data-id="2" class="btn-agregar-carito">Añadir al carrito</a> 
-                    </div>
-
-                        <div class="carta Brownie Brownie_avena 5.000 unidad Brownie2">
-                            <h5>mas vendido</h5>
-                                <img src="../img/brawni_avena2-removebg-preview1.png" alt="browni_avena">
-                            <div class="contenido_texto">
-                                <h1 class="titulo">Brawnie de aguacate y avena</h1>
-                                <p>la unidad</p>
-                                <p class="precio">$<span>5.000</span> pesos</p>  
-                            </div>
-                                <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                <a href="" data-id="3" class="btn-agregar-carito">Añadir al carrito</a> 
-                        </div>   
-                        <div class="carta cajas cajas_almendras 30.000 unidad cajas2">
-                                <img src="../img/caja2.png" alt="caja_almendras">
-                            <div class="contenido_texto">
-                                <h1 class="titulo">Caja de brownies de aguacate y almendras</h1>
-                                <p>6 unidades</p>
-                                <p class="precio">$<span>32.000</span> pesos</p>  
-                            </div>
-                                <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                <a href="" data-id="4" class="btn-agregar-carito">Añadir al carrito</a> 
-                        </div>   
-                        
-                        
-                        <div class="carta Brownie Brownie_avena 5.000 unidad Brownie2">
-                                <img src="../img/caja2.png" alt="caja_avena">
-                            <div class="contenido_texto">
-                                <h1 class="titulo">Caja de brownies de aguacate y avena</h1>
-                                <p>6 unidades</p>
-                                <p class="precio">$<span>30.000</span> pesos</p>  
-                            </div>
-                                <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                <a href="" data-id="5" class="btn-agregar-carito">Añadir al carrito</a> 
-                        </div> 
-                        
-                        
-                                    <div class="carta cajas cajas_arroz 30.000 unidad cajas2 ">
-                                            <img src="../img/caja2.png" alt="caja_arroz">
-                                        <div class="contenido_texto">
-                                            <h1 class="titulo">Caja de brownies de aguacate y arroz</h1>
-                                            <p>6 unidades</p>
-                                            <p class="precio">$<span>30.000</span> pesos</p>  
-                                        </div>
-                                            <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                            <a href="" data-id="6" class="btn-agregar-carito">Añadir al carrito</a> 
-                                    </div> 
-                                    
-                                    <div class="carta cafe 20.000 libras">
-                                        <img src="../img/cafe.png" alt="kumis">
-                                    <div class="contenido_texto">
-                                        <h1 class="titulo">Café tostado molido</h1>
-                                        <p>1 libra</p>
-                                        <p class="precio">$<span>25.000</span> pesos</p>  
-                                    </div>
-                                        <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                        <a href="" data-id="7" class="btn-agregar-carito">Añadir al carrito</a> 
-                                </div>    
-                                
-                                
-                                <div class="carta aromatica 5.000 otros">
-                                    <img src="../img/SAXSA.png" alt="kumis">
-                                <div class="contenido_texto">
-                                    <h1 class="titulo">Aromática 100% orgánica</h1>
-                                    <p>Caja con bolsas reutilizables</p>
-                                    <p class="precio">$<span>8.000</span> pesos</p>  
-                                </div>
-                                    <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                    <a href="" data-id="8" class="btn-agregar-carito">Añadir al carrito</a> 
-                            </div>      
-
-
-
-                                <div class="carta aguacate 5.000 kilo">
-                                    <img src="../img/aguacate-hass.jpeg" alt="kumis">
-                                <div class="contenido_texto">
-                                    <h1 class="titulo">Aguacate Hass de Fresno </h1>
-                                    <p>1 kilo</p>
-                                    <p class="precio">$<span>6.000</span> pesos</p>  
-                                </div>
-                                    <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                    <a href="" data-id="9" class="btn-agregar-carito">Añadir al carrito</a> 
-                            </div>      
-
-
-
-                                <div class="carta  miel 30.000 otros">
-                                    <img src="../img/miel.png" alt="kumis">
-                                <div class="contenido_texto">
-                                    <h1 class="titulo">Miel 100% natural del</h1>
-                                    <p>Precio botella</p>
-                                    <p class="precio">$<span>43.000</span> pesos</p>  
-                                </div>
-                                    <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                    <a href="" data-id="10" class="btn-agregar-carito">Añadir al carrito</a> 
-                            </div>      
-
-
-                                <div class="carta kumis 10.000 litro">
-                                    <img src="../img/kumis.png" alt="kumis">
-                                <div class="contenido_texto">
-                                    <h1 class="titulo">Kumis sin azúcar natural</h1>
-                                    <p>1 Litro</p>
-                                    <p class="precio">$<span>11.000</span> pesos</p>  
-                                </div>
-                                    <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                    <a href="" data-id="11" class="btn-agregar-carito">Añadir al carrito</a> 
-                            </div>    
-                            
-                    
-                            <div class="carta  panela 5.000 libras">
-                                <img src="../img/panela.png" alt="kumis">
-                            <div class="contenido_texto">
-                                <h1 class="titulo">Panela pulverizada 100% </h1>
-                                <p>1 libra</p>
-                                <p class="precio">$<span>5.000</span> pesos</p>  
-                            </div>
-                                <a href=""  class="btn-conoce-mas">Conoce mas!</a> 
-                                <a href="" data-id="12" class="btn-agregar-carito">Añadir al carrito</a> 
-                        </div>   
- -->
-                        <!-- <div class="carta mantequilla 10.000 gramos">
-                            <img src="../img/matequilla.png" alt="kumis">
-                        <div class="contenido_texto">
-                            <h1 class="titulo">Mantequilla de mani sin sal </h1>
-                            <p>250 gr</p>
-                            <p class="precio">$<span>11.000</span> pesos</p>  
-                        </div>
-                            <a href="../iniciar_registrar/registrar.html"  class="btn-conoce-mas">Conoce mas!</a> 
-                            <a href="" data-id="13" class="btn-agregar-carito">Añadir al carrito</a> 
-                            <a href ="../iniciar_registrar/registrar.html">prueva</a>
-                            <a href="../productos/productos.html">Productos</a>
-                        </div>    -->
-
-
-
-
-
-
 
         </div>
     </section>
@@ -373,22 +215,44 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 </section>
 <div class="footer_abajo">
-    <footer>
-        <h1><span class="color_0">O</span>rito verde</h1>
-            <div class="informacion">
-                <p><a href="#">terminos y condicones</a></p>
-                <p><a href="#">politica de privacidad</a></p>
-                <p><a href="#">sobre nosotros</a></p>
-            </div>
-                <div class="logos">
-                    <img src="../img/logos/instagram_03.png" alt="logo_intagram">
-                    <img src="../img/logos/twitter.png" alt="logo_twitter">
-                    <img src="../img/logos/facebook.png" alt="logo_facebook">
-                    <img src="../img/logos/youtube.png" alt="logo_youtube">
-                </div>
-    </footer>
-</div>
+        <footer>
+            <h1><span class="color_0">O</span>rito verde</h1>
+            
 
+            <!-- Nuevo contenedor para los elementos del acordeón -->
+            <div class="accordion_container">
+                <div class="accordion_item" id="info_accordion">
+                    <h2><a>ACERCA DE ORITO</a></h2>
+                    <div class="informacion_footer">
+                        <p><a href="../redaccion/terminos_condiciones.html"><b>terminos del servicio</b></a></p>
+                        <p><a href="../redaccion/politicas_privadas.html"><b>Política de privacidad</b></a></p>
+                        <p><a href="../sobre nosotros/sobre_nosotros.html"><b>sobre nosotros</b></a></p>
+                    </div>
+                </div>
+                <div class="accordion_item" id="contact_accordion">
+                    <h2><a >CONÉCTATE CON NOSOTROS</a></h2>
+                    <div class="contactanos_footer">
+                        <p>Disponible todos los días de 8:00 a.m. <br> a 6:00 p.m. QUINDIO - COLOMBIA</p>
+                        <p>WhatsApp: (+57) 314 300 4662</p>
+                        <p>E-MAIL: oritoverde@gmail.com </p>
+                    </div>
+                </div>
+                <div class="accordion_item" id="follow_accordion">
+                    <h2><a >SíGUENOS</a></h2>
+                    <div class="mensaje_footer">
+                        <p>¡Si te gusta lo que haces, ni los lunes <br> te quitarán LA SONRISA! <br><br>
+                        Gracias por apoyar este emprendimiento</p>
+                        <div class="logos">
+                            <img src="../img/logos/instagram_03.png" alt="logo_intagram">
+                            <img src="../img/logos/twitter.png" alt="logo_twitter">
+                            <img src="../img/logos/facebook.png" alt="logo_facebook">
+                            <img src="../img/logos/youtube.png" alt="logo_youtube">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 

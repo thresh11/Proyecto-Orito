@@ -1,0 +1,66 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f1f1f1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container{
+    background-color: white;
+    width: 60%;
+    
+    
+
+}
+
+@font-face{
+    font-family: titulo;
+    src: url(../img/letra/FrancoisOne-Regular.ttf);
+}
+
+.titulo{
+    font-family: titulo;
+    font-size: 6vh;
+    text-align: center;
+}
+
+span{
+    /* color: #1f4404; */
+    color: #537f14;
+}
+
+.sub_titulo{
+    font-family: titulo;
+    text-align: center;
+    color: #537f14;
+    font-size: 4vh;
+}
+.text{
+    width: 70%;
+    /* background-color: aqua; */
+    margin-left:15% ;
+    text-align: justify;
+    font-size: 18px;
+}
+
+
+.boton-verde {
+    background-color:#537f14;  /* Color verde */
+    color: white; /* Texto en color blanco */
+    padding: 20px 40px; /* Espaciado interno */
+    font-size: 20px; /* Tamaño del texto */
+
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer;
+    font-family: titulo; /* Cursor de apuntar */
+    margin: 5% 0% 10% 40%;
+}
+
+.boton-verde:hover {
+    background-color: #2c4010; /* Cambia el color al pasar el mouse */
+}

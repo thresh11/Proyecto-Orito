@@ -221,10 +221,10 @@ const Brownie_almendras_radio = document.getElementById("Brownie_almendras_radio
 const Brownie_arroz_radio = document.getElementById("Brownie_arroz_radio");
 
 
-const cajas__Radio = document.getElementById("cajas__Radio");
-const cajas_almendras_radio = document.getElementById("cajas_almendras_radio");
-const cajas_avena_radio = document.getElementById("cajas_avena_radio");
-const cajas_arroz_radio = document.getElementById("cajas_arroz_radio");
+// const cajas__Radio = document.getElementById("cajas__Radio");
+// const cajas_almendras_radio = document.getElementById("cajas_almendras_radio");
+// const cajas_avena_radio = document.getElementById("cajas_avena_radio");
+// const cajas_arroz_radio = document.getElementById("cajas_arroz_radio");
 
 
 
@@ -301,31 +301,31 @@ Brownie_avena_radio.addEventListener("change", () => {
 
 
 
-cajas__Radio.addEventListener("change", () => {
-    if (cajas__Radio.checked) {
-        filterBoxes("cajas");
-    }
-});
+// cajas__Radio.addEventListener("change", () => {
+//     if (cajas__Radio.checked) {
+//         filterBoxes("cajas");
+//     }
+// });
 
 
-cajas_almendras_radio.addEventListener("change", () => {
-    if (cajas_almendras_radio.checked) {
-        filterBoxes("cajas_almendras");
-    }
-});
+// cajas_almendras_radio.addEventListener("change", () => {
+//     if (cajas_almendras_radio.checked) {
+//         filterBoxes("cajas_almendras");
+//     }
+// });
 
 
-cajas_avena_radio.addEventListener("change", () => {
-    if (cajas_avena_radio.checked) {
-        filterBoxes("cajas_avena");
-    }
-});
+// cajas_avena_radio.addEventListener("change", () => {
+//     if (cajas_avena_radio.checked) {
+//         filterBoxes("cajas_avena");
+//     }
+// });
 
-cajas_arroz_radio.addEventListener("change", () => {
-    if (cajas_arroz_radio.checked) {
-        filterBoxes("cajas_arroz");
-    }
-});
+// cajas_arroz_radio.addEventListener("change", () => {
+//     if (cajas_arroz_radio.checked) {
+//         filterBoxes("cajas_arroz");
+//     }
+// });
 
 
 
@@ -357,7 +357,7 @@ combo__Radio.addEventListener("change", () => {
 
 libras__Radio.addEventListener("change", () => {
     if (libras__Radio.checked) {
-        filterBoxes("libras");
+        filterBoxes("libra");
     }
 });
 
@@ -446,7 +446,7 @@ BrownieRadio2.addEventListener("change", () => {
 
 cajas__Radio2.addEventListener("change", () => {
     if (cajas__Radio2.checked) {
-        filterBoxes("cajas2");
+        filterBoxes("chocolate");
     }
 });
 
@@ -527,6 +527,27 @@ function mostrarDiv(numero) {
     div.style.display = "none";
     }
 }
+
+
+// footer
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion_item');
+
+    accordionItems.forEach(item => {
+        const title = item.querySelector('h2');
+        title.addEventListener('click', () => {
+            accordionItems.forEach(innerItem => {
+                if (innerItem !== item) {
+                    innerItem.classList.remove('active');
+                }
+            });
+            item.classList.toggle('active');
+        });
+    });
+});
+
+//end footer
 
 
 

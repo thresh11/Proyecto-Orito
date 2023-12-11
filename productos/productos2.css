@@ -579,6 +579,7 @@ p.author a {
 
 
 
+
 .footer_abajo{
     background-color: rgb(255, 255, 255);
 }
@@ -597,10 +598,12 @@ footer h1{
     justify-content: center;
     color: white;
     margin-bottom: 20px;
+    margin-top: -1%;
+    font-size: 40px;
 }
 
 .footer_abajo .color_0{
-    color: #41512a;
+    color:  #537f14;
     
 }
 
@@ -608,25 +611,120 @@ footer p a {
     text-decoration: none;
     color: white;
 }
+footer p  {
+    color: white;
+    font-size: 17px;
+}
+
+footer h2 a  {
+    text-decoration: none;
+    color: white;
+    font-family:titulo ;
+    color:  #537f14;
+    margin-left: 80px;
+}
 
 
-.informacion{
+.todo_footer{
     display: flex;
     justify-content: space-between;
-    margin: 0% 30%;
+}
+
+.informacion_footer{
+    display: block;
+    justify-content: space-between;
+    margin: 0% 0%;
+    margin-left: 80px;
+    /* background-color: #0c6c2c; */
+}
+
+.contactanos_footer{
+    display: block;
+    justify-content: space-between;
+    margin-left: 80px;
+    /* background-color: #076ecd; */
+}
+
+.mensaje_footer{
+    display: block;
+    justify-content: space-between;
+    margin-right: 80px;
+    /* color:white; */
+    /* background-color: #0acd07; */
 }
 
 
 .logos{
     display: flex;
     justify-content: space-between;
-    margin: 0% 40%;
-    margin-top: 15px;
+    margin: 0% 10%;
+    margin-top: 10%;
 }
 
 .logos img{
     width: 20px;
 }
+
+.accordion_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ... (Estilos existentes) ... */
+
+.todo_footer_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .todo_footer {
+        display: none;
+    }
+    .accordion_container {
+    display: block;
+    
+}
+
+footer h2 a {
+    margin: 0;
+}
+
+    .todo_footer_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .accordion_item {
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: #333;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .accordion_item h2 {
+        padding: 10px;
+        margin: 0;
+        cursor: pointer;
+        color: white;
+    }
+
+    .accordion_item div {
+        padding: 10px;
+        display: none;
+    }
+
+    .accordion_item.active div {
+        display: block;
+    }
+}
+
+
+
+
+
 
 
 
