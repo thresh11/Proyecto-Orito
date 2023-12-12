@@ -301,6 +301,7 @@ if ($id == '' || $token == ''){
 				</div>
 
 		</section>
+</div>
 
 
 		<div class="footer_abajo">
@@ -313,15 +314,15 @@ if ($id == '' || $token == ''){
                 <div class="accordion_item" id="info_accordion">
                     <h2><a>ACERCA DE ORITO</a></h2>
                     <div class="informacion_footer">
-                        <p><a href="../redaccion/terminos_condiciones.html"><b>terminos del servicio</b></a></p>
-                        <p><a href="../redaccion/politicas_privadas.html"><b>Política de privacidad</b></a></p>
-                        <p><a href="../sobre nosotros/sobre_nosotros.html"><b>sobre nosotros</b></a></p>
+                        <p><a href="../redaccion/terminos_condiciones.html"><u>terminos del servicio</u></a></p>
+                        <p><a href="../redaccion/politicas_privadas.html"><u>Política de privacidad</u></a></p>
+                        <p><a href="../sobre nosotros/sobre_nosotros.html"><u>sobre nosotros</u></a></p>
                     </div>
                 </div>
                 <div class="accordion_item" id="contact_accordion">
                     <h2><a >CONÉCTATE CON NOSOTROS</a></h2>
                     <div class="contactanos_footer">
-                        <p>Disponible todos los días de 8:00 a.m. <br> a 6:00 p.m. QUINDIO - COLOMBIA</p>
+                        <p>Disponible todos los días de 8:00 a.m. <br> a 6:00 p.m. IBAGUE-TOLIMA</p>
                         <p>WhatsApp: (+57) 314 300 4662</p>
                         <p>E-MAIL: oritoverde@gmail.com </p>
                     </div>
@@ -426,7 +427,7 @@ let valueByDefault = parseInt(inputQuantity.value);
 
 <div id="cuestionario">
     <div id="cerrar" onclick="cerrarCuestionario()">X</div>
-    <h4>Comentamos</h4>
+    <h4>Comentanos</h4>
     <form>
         <label for="Nombre">Nombre:</label>
         <input type="text" name="Nombre" required><br>
