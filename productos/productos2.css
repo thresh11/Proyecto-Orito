@@ -488,8 +488,8 @@ jhon */
 
 @media only screen and (max-width: 768px) {
     .products {
-        width: 100%;
-        background-color: #333;
+        width: 768px;
+        /* background-color: #333; */
     }
     .carta {
         width: 48%; /* Cambiado para mostrar dos cartas por fila en dispositivos pequeños */
@@ -497,7 +497,7 @@ jhon */
     }
 
     .carta img {
-        height: 30%;
+        height: 40%;
         width: 80%;
         margin-left: 0;
     }
@@ -516,6 +516,16 @@ jhon */
         padding: 7px 10px ;
 
     }
+
+    .btn-conoce-mas,
+.btn-agregar-carito {   
+    text-align: center;
+    display: block;
+    margin: 0 10px ;
+    margin-bottom: 0px; 
+}
+
+
 }
 
 
