@@ -71,7 +71,7 @@ if ($id == '' || $token == ''){
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"/>
 		<title>Pagina Producto</title>
-		<link rel="stylesheet" href="index2.css" />
+		<link rel="stylesheet" href="index2.css" /><link rel="icon" href="../img/aguacatico.png">
         <script defer src="index2.js"></script>
 	</head>
 <body>

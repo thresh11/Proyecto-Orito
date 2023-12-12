@@ -487,7 +487,7 @@ p.author a {
     position: absolute;
     margin: 12% 50% 0% 20%;
     color: white; 
-    font-size: 24px;
+    font-size: 18px;
 }
 
 
@@ -845,6 +845,9 @@ footer h2 a {
     .accordion_item.active div {
         display: block;
     }
+    .mensaje_footer, .contactanos_footer, .informacion_footer{
+        margin: 0;
+}
 }
 
 
