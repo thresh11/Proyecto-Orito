@@ -231,25 +231,36 @@ const swiper = new Swiper('.swiper', {
     }
 
   
-   // Selecciona los elementos
+   
    var iconoMenu = document.querySelector('.icon_menu');
    var contenidoMenuR = document.querySelector('.menuR');
-   
-   window.onload = function() {
-       if (window.getComputedStyle(contenidoMenuR).display === 'flex') {
-           contenidoMenuR.style.maxHeight = '500px';
+
+//    window.onload = function() {
+//        if (window.getComputedStyle(contenidoMenuR).display === 'flex') {
+//            contenidoMenuR.style.maxHeight = '500px';
+//        } else {
+//            contenidoMenuR.style.maxHeight = '0px';
+//        }
+//    };
+
+function menu_despegable(){
+    var contenidoMenuR = document.querySelector('.menuR');
+       if (contenidoMenuR.style.display === 'none') {
+           contenidoMenuR.style.display = 'block';
        } else {
-           contenidoMenuR.style.maxHeight = '0px';
+           contenidoMenuR.style.display = 'none';
        }
-   };
-   
-   iconoMenu.addEventListener('click', function() {
-       if (contenidoMenuR.style.maxHeight === '0px') {
-           contenidoMenuR.style.maxHeight = '500px';
-       } else {
-           contenidoMenuR.style.maxHeight = '0px';
-       }
-   });
+}
+
+// var iconoMenu = document.querySelector('.icon_menu');
+//    iconoMenu.addEventListener('click', function() {
+//    var contenidoMenuR = document.querySelector('.menuR');
+//        if (contenidoMenuR.style.display === 'none') {
+//            contenidoMenuR.style.display = 'block';
+//        } else {
+//            contenidoMenuR.style.display = 'none';
+//        }
+//    });
    
    
      

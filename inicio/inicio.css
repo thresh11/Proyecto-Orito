@@ -11,8 +11,9 @@ body{
 
 .container{
     max-width: 1200px;
-    /* text-align: center; */
+    text-align: center;
     margin: auto;
+    justify-content: center;
 }
 
 .barra{
@@ -87,8 +88,9 @@ header nav ul li a:hover.uc_superior a{
     height: 170px;
 
     z-index: 1;
-    top: 10%; 
-    left: 70%; 
+    top: 9%; 
+    /* left: 60%;  */
+    right: 8%;
     border-radius: 4px;
 }
 
@@ -193,12 +195,19 @@ header nav ul li a:hover{
 }
 
 .menuR{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    max-height: 0;
+    /* display: flex; */
+    display: none;
+    position: fixed;
+    z-index: 2;
+    /* flex-direction: column; */
+    /* overflow: hidden; */
+    /* max-height: 0; */
     /* transition: max-height 0.6s ease-out; */
     background-color: #000000;
+    width: 100%;
+    /* height: 50vh; */
+ 
+    
 }
 
 
@@ -222,7 +231,10 @@ header nav ul li a:hover{
 
 }
 
-
+.aa{
+    width: 100%;
+    height: 100px;
+}
 
 
 
@@ -230,8 +242,12 @@ header nav ul li a:hover{
     .icon_menu{
         display: none;
     } 
-    .menuR {
+    /* .menuR {
         display: none;
+    } */
+
+    .navegadorAbajo{
+        background-color: rgb(0, 0, 0);
     }
 }
 
@@ -245,6 +261,14 @@ header nav ul li a:hover{
 /* controladores del la barra navegadora al hacer scroll en js  */
 .navegadorAbajo{
     background-color: rgba(0, 0, 0, 0.932);
+}
+
+@media screen and (max-width:720px){ 
+    .navegadorAbajo{
+        background-color: rgb(0, 0, 0);
+    }
+
+    
 }
 
 .aabajo{
@@ -474,20 +498,25 @@ p.author a {
     /* background-color: #b31414; */
     margin-bottom: 10px;
     border-radius: 40px;
-    background-image: url(../img/cartel_publisitario.png);
+    /* background-image: url(../img/cartel_publisitario.png); */
+    background-image: url(../img/pruevas_1.jpg);
 
     background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-    filter: blur(2px); 
+    filter: blur(3px); 
     /* opacity: 0.7;  */
     position: relative;
     /* backdrop-filter: blur(10px); */
+    overflow: hidden;
 }
 
 .section_targeta_publicitaria p{
     position: absolute;
-    margin: 12% 50% 0% 20%;
-    color: white; 
+    margin: 10% 20%;
+    color: rgb(255, 255, 255); 
     font-size: 24px;
+
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 
@@ -509,6 +538,15 @@ p.author a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
+}
+
+@media screen and (max-width:720px){    
+    .products{
+        align-items: center;
+        justify-content: center;
+        
+    }  
 }
 
 .carta{
@@ -542,7 +580,7 @@ p.author a {
     position: absolute;
     margin-top: 25px;
     /* margin-left: 245px; */
-    margin-left: 14.7%;
+    margin-left: 220px;
     background-color: #1f4404;
     /* background-color: #d7b418; */
     color: #fff;
@@ -849,6 +887,41 @@ footer h2 a {
 
 
 
+
+
+
+@media screen and (max-width:560px){ 
+    .titulo_3{
+        font-size: 0.8rem;
+    }
+
+    .titulo_2{
+        font-size: 0.8rem;
+    }
+
+    .titulooo{
+        font-size: 1.3rem;
+    }
+
+    .section_targeta_publicitaria p{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width:560px){ 
+    .titulo_3{
+        font-size: 0.7rem;
+    }
+    .titulo_2{
+        font-size: 0.6rem;
+    }
+    .titulooo{
+        font-size: 0.9rem;
+    }
+    .section_targeta_publicitaria p{
+        font-size: 20px;
+    }
+}
 
 
 

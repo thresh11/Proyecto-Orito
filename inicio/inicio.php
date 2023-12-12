@@ -75,12 +75,11 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                         </li>          
                                 </li>
-                    </div>
-                            <?php else: ?>
+                                <?php else: ?>
                                 <li><a href="../iniciar_registrar/login.php">inicia session</a></p>
                             <?php endif; ?>
-                    <!-- </div> -->
-                        <li class="icon_menu"><a href="#"><img src="../img/menu.svg" alt="menu"></a></li>
+                    </div>
+                        <li class="icon_menu" onclick="menu_despegable()"><img src="../img/menu.svg" alt="menu"></li>
                 </ul>
                     <div class="header-section container">
                         <img onclick="verCarrito(this)" class="cart" src="../img/carrito.png" alt="carrito">
@@ -103,11 +102,35 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
 <div class="barra"></div>
 <div class="menuR">
     <div class="lista">
+    <?php if (isset($user)): ?>
+                                <li class="perfil">
+                                    <span class="material-symbols-outlined">account_circle</span>    
+                                    <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
+                                        <!-- <li class="ff" id="ff">
+                                            <div class="uc_superior">
+                                                <h3><span>o</span>rito verde</h3>
+                                                <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar seccion</a>
+                                            </div>
+                                            <div class="uc_posterior">
+                                                <div class="a">
+                                                    <img src="../img/icono_user.jpg" alt="">
+                                                </div>  
+                                                    <div class="b">
+                                                        <h3><?= htmlspecialchars($user["nombre"]) ?></h3>
+                                                        <h5><?= htmlspecialchars($user["correo"]) ?></h5>
+                                                </div>      
+                                            </div>
+                                        </li>           -->
+                                </li>
+                                <?php else: ?>
+                                <li><a href="../iniciar_registrar/login.php">inicia session</a></p>
+                            <?php endif; ?>
         <li><a href="inicio.html">Inicio</a></li>
         <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
         <li><a href="../productos/productos2.php">productos</a></li>
     </div> 
 </div>
+
     <section>
         <div class="carrusel">
             <!-- Slider main container -->
