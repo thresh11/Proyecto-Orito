@@ -168,22 +168,10 @@ if ($id == '' || $token == ''){
 							</option>
 							<option value="rojo">Brownie de Arroz</option>
 							<option value="blanco">Brownie de Almendras</option>
-							<option value="beige">Brownie de Aguacate</option>
+							<option value="beige">Brownie de Avena</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="size">Paquetes</label>
-						<select name="size" id="size">
-							<option disabled selected value="">
-								Escoge una opción
-							</option>
-							<option value="3">3</option>
-							<option value="5">5</option>
-							<option value="10">10</option>
-							<option value="15">15</option>
-						</select>
-					</div>
-					<button class="btn-clean">Limpiar</button>
+				
 				</div>
 
 				<div class="container-add-cart">
@@ -288,7 +276,6 @@ if ($id == '' || $token == ''){
 								<a href="" data-id="<?php echo $row["id_producto"];?>" class="btn-agregar-carito">Añadir al carrito</a> 
 						</div>
 						<?php 
-						// if ($id == $row ['id_producto']){
 							if ($contador == 4){
 							break;
 							
@@ -420,6 +407,23 @@ let valueByDefault = parseInt(inputQuantity.value);
 
 
 		</script>
+
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion_item');
+
+    accordionItems.forEach(item => {
+        const title = item.querySelector('h2');
+        title.addEventListener('click', () => {
+            accordionItems.forEach(innerItem => {
+                if (innerItem !== item) {
+                    innerItem.classList.remove('active');
+                }
+            });
+            item.classList.toggle('active');
+        });
+    });
+});</script>
 
 <div class="blue"></div>
 
