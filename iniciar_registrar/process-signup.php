@@ -9,7 +9,7 @@ if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     die("Valid email is required");
 }
 
-if (strlen($_POST["password"]) < 3) {
+if (strlen($_POST["password"]) < 4) {
     die("Password must be at least 4 characters");
 }
 

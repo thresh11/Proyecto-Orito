@@ -78,12 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     .addField("#email", [
         {
-            rule: "required",
-            errorMessage: messageError.required,
+            rule: "required"
         },
         {
-            rule: "email",
-            errorMessage: messageError.email,
+            rule: "email"
         },
         {
             validator: (value) => () => {
@@ -95,10 +93,33 @@ document.addEventListener('DOMContentLoaded', function() {
                            return json.available;
                        });
             },
-            
-            errorMessage: "correo electrónico ya ocupado",
+            errorMessage: "email already taken"
         }
     ])
+
+    // .addField("#email", [
+    //     {
+    //         rule: "required",
+    //         errorMessage: messageError.required,
+    //     },
+    //     {
+    //         rule: "email",
+    //         errorMessage: messageError.email,
+    //     },
+    //     {
+    //         validator: (value) => () => {
+    //             return fetch("validate-email.php?correo =" + encodeURIComponent(value))
+    //                    .then(function(response) {
+    //                        return response.json();
+    //                    })
+    //                    .then(function(json) {
+    //                        return json.available;
+    //                    });
+    //         },
+            
+    //         errorMessage: "correo electrónico ya ocupado",
+    //     }
+    // ])
 
     .addField("#password", [
         {

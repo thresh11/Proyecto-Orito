@@ -185,30 +185,54 @@ header nav ul li a:hover{
 
 
 /* todo este bloque de codigo es para ver la barra navegadora para celulares */
+
+
 .icon_menu{
     padding: 5px;
     border-radius: 10px;
 }
 
-.icon_menu:hover{
-    background-color: #d7b418;
+.menuR{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    /* transition: max-height 0.6s ease-out; */
+    background-color: #000000;
 }
 
-.contenido_vertical{
-    margin-left: -90px;
-    position: absolute;
-    display: none;
+
+.lista{
+    /* background-color: #d7b418; */
+    background-color: #000000;
+    width: 100%;
 }
 
-.icon_menu:hover .contenido_vertical{
-    display: block;
+.menuR li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    border: #1f4404 solid 1px;
+    padding: 10px;
 }
+
+.menuR a{
+    text-decoration: none;
+    color: white;
+
+}
+
+
+
 
 
 @media screen and (min-width:720px){
     .icon_menu{
         display: none;
     } 
+    .menuR {
+        display: none;
+    }
 }
 
 @media screen and (max-width:720px){
