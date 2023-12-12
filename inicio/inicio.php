@@ -139,7 +139,10 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     <section class="section_targeta_publicitaria">
         <div class="targeta_publicitaria"> 
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, omnis nemo, temporibus delectus in consectetur adipisci nesciunt quo cum expedita quam minima quisquam natus facilis. Possimus saepe aut eaque magni!</p>
+        <p>Nuestros brownies de aguacate combinan sabor y salud. Con ácidos grasos buenos para el corazón y antioxidantes que protegen
+            las células, cada bocado es un paso hacia el bienestar. Son ricos en fibra y minerales esenciales, perfectos para disfrutar
+            sin culpa. ¡Elige lo mejor para ti con nuestros brownies!
+        </p>
     </section>
     
     
