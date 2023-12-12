@@ -768,6 +768,7 @@ footer p a {
 footer p  {
     color: white;
     font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 footer h2 a  {
@@ -873,7 +874,10 @@ footer h2 a {
     .accordion_item.active div {
         display: block;
     }
-}
+
+    .mensaje_footer, .contactanos_footer, .informacion_footer{
+        margin: 0;
+}}
 
 
 

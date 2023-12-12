@@ -883,6 +883,9 @@ footer h2 a {
     .accordion_item.active div {
         display: block;
     }
+    .mensaje_footer, .contactanos_footer, .informacion_footer{
+        margin: 0;
+}
 }
 
 

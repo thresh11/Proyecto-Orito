@@ -35,7 +35,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orito Verde</title>
     
-    <script defer src="inicio.js"></script>
+    <script defer src="inicio.js"></script><link rel="icon" href="../img/aguacatico.png">
    
     <link
     rel="stylesheet"
@@ -157,7 +157,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     </section>
 
     <div class="titulo_3">
-        <h1>Beneficios de <span>Nuestros</span> Productos</h1>
+        <h1>Programa <span>"tu brownie,</span> tu vida": </h1> 
     </div>
     <section class="section_targeta_publicitaria">
         <div class="targeta_publicitaria"> 
@@ -251,45 +251,46 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
         
-        <div class="footer_abajo">
-        <footer>
-            <h1><span class="color_0">O</span>rito verde</h1>
-            
+<div class="footer_abajo">
+    <footer>
+        <h1><span class="color_0">O</span>rito verde</h1>
+        
 
-            <!-- Nuevo contenedor para los elementos del acordeón -->
-            <div class="accordion_container">
-                <div class="accordion_item" id="info_accordion">
-                    <h2><a>ACERCA DE ORITO</a></h2>
-                    <div class="informacion_footer">
-                        <p><a href="../redaccion/terminos_condiciones.html"><b>terminos del servicio</b></a></p>
-                        <p><a href="../redaccion/politicas_privadas.html"><b>Política de privacidad</b></a></p>
-                        <p><a href="../sobre nosotros/sobre_nosotros.html"><b>sobre nosotros</b></a></p>
-                    </div>
+        <!-- Nuevo contenedor para los elementos del acordeón -->
+        <div class="accordion_container">
+            <div class="accordion_item" id="info_accordion">
+                <h2><a>ACERCA DE ORITO</a></h2>
+                <div class="informacion_footer">
+                    <p><a href="../redaccion/terminos_condiciones.html"><u>terminos del servicio</u></a></p>
+                    <p><a href="../redaccion/politicas_privadas.html"><u>Política de privacidad</u></a></p>
+                    <p><a href="../sobre nosotros/sobre_nosotros.html"><u>sobre nosotros</u></a></p>
                 </div>
-                <div class="accordion_item" id="contact_accordion">
-                    <h2><a >CONÉCTATE CON NOSOTROS</a></h2>
-                    <div class="contactanos_footer">
-                        <p>Disponible todos los días de 8:00 a.m. <br> a 6:00 p.m. QUINDIO - COLOMBIA</p>
-                        <p>WhatsApp: (+57) 314 300 4662</p>
-                        <p>E-MAIL: oritoverde@gmail.com </p>
-                    </div>
+            </div>
+            <div class="accordion_item" id="contact_accordion">
+                <h2><a >CONÉCTATE CON NOSOTROS</a></h2>
+                <div class="contactanos_footer">
+                    <p>Disponible todos los días de 8:00 a.m. <br> a 6:00 p.m. IBAGUE - TOLIMA</p>
+                    <p>WhatsApp: (+57) 314 300 4662</p>
+                    <p>E-MAIL: oritoverde@gmail.com </p>
                 </div>
-                <div class="accordion_item" id="follow_accordion">
-                    <h2><a >SíGUENOS</a></h2>
-                    <div class="mensaje_footer">
-                        <p>¡Si te gusta lo que haces, ni los lunes <br> te quitarán LA SONRISA! <br><br>
-                        Gracias por apoyar este emprendimiento</p>
-                        <div class="logos">
-                            <img src="../img/logos/instagram_03.png" alt="logo_intagram">
-                            <img src="../img/logos/twitter.png" alt="logo_twitter">
-                            <img src="../img/logos/facebook.png" alt="logo_facebook">
-                            <img src="../img/logos/youtube.png" alt="logo_youtube">
-                        </div>
+            </div>
+            <div class="accordion_item" id="follow_accordion">
+                <h2><a >SíGUENOS</a></h2>
+                <div class="mensaje_footer">
+                    <p>¡Si te gusta lo que haces, ni los lunes <br> te quitarán LA SONRISA! <br><br>
+                    Gracias por apoyar este emprendimiento</p>
+                    <div class="logos">
+                        <img src="../img/logos/instagram_03.png" alt="logo_intagram">
+                        <img src="../img/logos/twitter.png" alt="logo_twitter">
+                        <img src="../img/logos/facebook.png" alt="logo_facebook">
+                        <img src="../img/logos/youtube.png" alt="logo_youtube">
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>     
+        </div>
+    </footer>
+</div>
+  
     <!-- ipconfig -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </body>
