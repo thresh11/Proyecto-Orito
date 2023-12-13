@@ -1,0 +1,17 @@
+body{
+    background-color: #1f4404;
+    margin: 20px 20%;
+}
+
+body h1{
+    font-size: 2rem;
+    color: rgb(223, 219, 219);
+}
+
+body p{
+    color: rgb(195, 197, 199);
+}
+
+body p a{
+    text-decoration: none;
+}

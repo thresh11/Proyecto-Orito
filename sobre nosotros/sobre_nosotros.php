@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    $mysqli = require __DIR__ . "/../iniciar_registrar/database.php"; 
+    // $sql = "SELECT * FROM user WHERE id = {$_SESSION["user_id"]}";     
+    $sql = "SELECT * FROM usuarios WHERE id = {$_SESSION["user_id"]}";     
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,32 +26,45 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body class="fondo">
     <!-- hola mundo -->
-    <header>
-        <div class="navegador">     
-            <a href="../inicio/inicio.html"><h1><span class="color_0">O</span>rito verde</h1></a>
-
-                <nav>
-                    <ul>
-                        <div class="desaparecer">
-                            <li><a href="../inicio/inicio.html">Inicio</a></li>
-                            <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
-                            <li><a href="../productos/productos2.php">productos</a></li>
-                            <li><a href="../iniciar_registrar/iniciar_sesion.html">Iniciar Sesión</a></li>
-                        </div>
-                            <li class="icon_menu">
-                                <a href="#"><span class="material-symbols-outlined" id="tamaño">Menú</span></a>
-                                    <ul class="contenido_vertical">
-                                        <li><a href="../inicio/inicio.html">Inicio</a></li>
-                                        <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
-                                        <li><a href="../productos/productos.html">Productos</a></li>
-                                        <li><a href="../iniciar_registrar/registrar.html">Iniciar Sesión</a></li>
-                                    </ul>
-                            </li>
-                    </ul>
-
+    <header class="navegador">
+        <a href="../inicio/inicio.php"><h1><span class="color_0">O</span>rito verde</h1></a>
+            <nav>
+                <ul>
+                    <div class="desaparecer">
+                        <li><a href="../inicio/inicio.php">Inicio</a></li>
+                        <li><a href="../productos/productos2.php">productos</a></li>
+                        <li><a href="../sobre nosotros/sobre_nosotros.php">Sobre Nosotros</a></li>
+                            <?php if (isset($user)): ?>
+                                <li class="perfil">
+                                    <span class="material-symbols-outlined">account_circle</span>    
+                                    <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
+                                        <li class="ff" id="ff">
+                                            <div class="uc_superior">
+                                                <h3><span>o</span>rito verde</h3>
+                                                <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar sesión</a>
+                                            </div>
+                                            <div class="uc_posterior">
+                                                <div class="a">
+                                                    <img src="../img/icono_user.jpg" alt="">
+                                                </div>  
+                                                    <div class="b">
+                                                        <h3><?= htmlspecialchars($user["nombre"]) ?></h3>
+                                                        <h5><?= htmlspecialchars($user["correo"]) ?></h5>
+                                                </div>      
+                                            </div>
+                                        </li>          
+                                </li>
+                                <?php else: ?>
+                                <li><a href="../iniciar_registrar/login.php">Inicia sesión</a></p>
+                            <?php endif; ?>
+                    </div>
+                        <li class="icon_menu" onclick="menu_despegable()"><img src="../img/menu.svg" alt="menu"></li>
+                </ul>
                     <div class="header-section container">
                         <img onclick="verCarrito(this)" class="cart" src="../img/carrito.png" alt="carrito">
                         <p class="count-product">0</p>
@@ -57,6 +85,22 @@
 
     <div class="barra"></div>
 
+    <div class="menuR">
+        <div class="lista">
+            <?php if (isset($user)): ?>
+                <li class="perfil">
+                    <span class="material-symbols-outlined">account_circle</span>    
+                    <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
+                </li>
+            <?php else: ?>
+                <li><a href="../iniciar_registrar/login.php">Inicia sesión</a></p>
+            <?php endif; ?>
+                <li><a href="../inicio/inicio.php">Inicio</a></li>
+                <li><a href="../productos/productos2.php">productos</a></li>
+                <li><a href="../sobre nosotros/sobre_nosotros.php">Sobre Nosotros</a></li>
+        </div> 
+    </div>
+
     <section>
         <div class="carrusel">
             <!-- Slider main container -->
@@ -64,7 +108,7 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"><img src="../img/0.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/Diapositiva1.png" alt=""></div>
         <div class="swiper-slide"><img src="../img/aguacate-1.jpg" alt=""></div>
         <div class="swiper-slide"><img src="../img/aguacate-2.jpg" alt=""></div>
         

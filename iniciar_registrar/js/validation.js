@@ -83,18 +83,18 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             rule: "email"
         },
-        {
-            validator: (value) => () => {
-                return fetch("validate-email.php?correo=" + encodeURIComponent(value))
-                       .then(function(response) {
-                           return response.json();
-                       })
-                       .then(function(json) {
-                           return json.available;
-                       });
-            },
-            errorMessage: "email already taken"
-        }
+        // {
+        //     validator: (value) => () => {
+        //         return fetch("validate-email.php?correo=" + encodeURIComponent(value))
+        //                .then(function(response) {
+        //                    return response.json();
+        //                })
+        //                .then(function(json) {
+        //                    return json.available;
+        //                });
+        //     },
+        //     errorMessage: "email already taken"
+        // }
     ])
 
     // .addField("#email", [

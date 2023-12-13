@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </div>
                         
                     <div class="form_section">
-                        <label for="password">Password</label>
+                        <label for="password">Contraseña</label>
                         <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
                     </div>
 

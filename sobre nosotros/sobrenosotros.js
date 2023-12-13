@@ -267,3 +267,36 @@ function updateCart() {
     localStorage.setItem('cart', JSON.stringify(buyThings));
 }
 
+
+
+
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("ff");
+    if (dropdownContent.style.display === "none") {
+        dropdownContent.style.display = "block";
+    } else {
+        dropdownContent.style.display = "none";
+    }
+}
+
+
+
+var iconoMenu = document.querySelector('.icon_menu');
+var contenidoMenuR = document.querySelector('.menuR');
+
+//    window.onload = function() {
+//        if (window.getComputedStyle(contenidoMenuR).display === 'flex') {
+//            contenidoMenuR.style.maxHeight = '500px';
+//        } else {
+//            contenidoMenuR.style.maxHeight = '0px';
+//        }
+//    };
+
+function menu_despegable(){
+var contenidoMenuR = document.querySelector('.menuR');
+   if (contenidoMenuR.style.display === 'none') {
+       contenidoMenuR.style.display = 'block';
+   } else {
+       contenidoMenuR.style.display = 'none';
+   }
+}

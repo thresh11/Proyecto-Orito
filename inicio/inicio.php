@@ -43,26 +43,28 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="inicio.css">
+    <!-- <link rel="stylesheet" href="inicio_pruva.css">  -->
 </head>
 <body>
 
     <!-- hola mundo -->
     <header class="navegador">
-        <a href="../inicio/inicio.html"><h1><span class="color_0">O</span>rito verde</h1></a>
+        <a href="../inicio/inicio.php"><h1><span class="color_0">O</span>rito verde</h1></a>
             <nav>
                 <ul>
                     <div class="desaparecer">
-                        <li><a href="inicio.html">Inicio</a></li>
-                        <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="../inicio/inicio.php">Inicio</a></li>
                         <li><a href="../productos/productos2.php">productos</a></li>
+                        <li><a href="../sobre nosotros/sobre_nosotros.php">Sobre Nosotros</a></li>
                             <?php if (isset($user)): ?>
                                 <li class="perfil">
                                     <span class="material-symbols-outlined">account_circle</span>    
+                                    <!-- <span><img src="../img/icono_user.svg" alt=""></span> -->
                                     <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
                                         <li class="ff" id="ff">
                                             <div class="uc_superior">
                                                 <h3><span>o</span>rito verde</h3>
-                                                <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar seccion</a>
+                                                <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar sesión</a>
                                             </div>
                                             <div class="uc_posterior">
                                                 <div class="a">
@@ -76,7 +78,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                                         </li>          
                                 </li>
                                 <?php else: ?>
-                                <li><a href="../iniciar_registrar/login.php">inicia session</a></p>
+                                <li><a href="../iniciar_registrar/login.php">Inicia sesión</a></p>
                             <?php endif; ?>
                     </div>
                         <li class="icon_menu" onclick="menu_despegable()"><img src="../img/menu.svg" alt="menu"></li>
@@ -100,36 +102,22 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     
 
 <div class="barra"></div>
+
 <div class="menuR">
-    <div class="lista">
-    <?php if (isset($user)): ?>
-                                <li class="perfil">
-                                    <span class="material-symbols-outlined">account_circle</span>    
-                                    <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
-                                        <!-- <li class="ff" id="ff">
-                                            <div class="uc_superior">
-                                                <h3><span>o</span>rito verde</h3>
-                                                <a href="../iniciar_registrar/logout.php" class="btn-cerrar-session">Cerrar seccion</a>
-                                            </div>
-                                            <div class="uc_posterior">
-                                                <div class="a">
-                                                    <img src="../img/icono_user.jpg" alt="">
-                                                </div>  
-                                                    <div class="b">
-                                                        <h3><?= htmlspecialchars($user["nombre"]) ?></h3>
-                                                        <h5><?= htmlspecialchars($user["correo"]) ?></h5>
-                                                </div>      
-                                            </div>
-                                        </li>           -->
-                                </li>
-                                <?php else: ?>
-                                <li><a href="../iniciar_registrar/login.php">inicia session</a></p>
-                            <?php endif; ?>
-        <li><a href="inicio.html">Inicio</a></li>
-        <li><a href="../sobre nosotros/sobre_nosotros.html">Sobre Nosotros</a></li>
-        <li><a href="../productos/productos2.php">productos</a></li>
-    </div> 
-</div>
+        <div class="lista">
+            <?php if (isset($user)): ?>
+                <li class="perfil">
+                    <span class="material-symbols-outlined">account_circle</span>    
+                    <span class="nombre_usuario" onclick="toggleDropdown()">Hola <?= htmlspecialchars($user["nombre"]) ?></span>
+                </li>
+            <?php else: ?>
+                <li><a href="../iniciar_registrar/login.php">Iniciar sesión</a></p>
+            <?php endif; ?>
+                <li><a href="../inicio/inicio.php">Inicio</a></li>
+                <li><a href="../productos/productos2.php">productos</a></li>
+                <li><a href="../sobre nosotros/sobre_nosotros.php">Sobre Nosotros</a></li>
+        </div> 
+    </div>
 
     <section>
         <div class="carrusel">
@@ -157,7 +145,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
     </section>
 
     <div class="titulo_3">
-        <h1>Programa <span>"tu brownie,</span> tu vida": </h1> 
+        <h1>Programa <span>"tu brownie,</span> tu vida"</h1> 
     </div>
     <section class="section_targeta_publicitaria">
         <div class="targeta_publicitaria"> 
@@ -187,7 +175,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                         $imagen = "../img/logo.jpeg";
                     }
                     ?>
-                    <h5>mas vendido</h5>
+                    <h5>más vendido</h5>
                     <img src="<?php  echo $imagen; ?>" alt="foto" >
                     <div class="contenido_texto">
                         <h1 class="titulo"><?php  echo $row ['nombre_producto']; $contador++;?></h1>
@@ -263,7 +251,7 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                 <div class="informacion_footer">
                     <p><a href="../redaccion/terminos_condiciones.html"><u>terminos del servicio</u></a></p>
                     <p><a href="../redaccion/politicas_privadas.html"><u>Política de privacidad</u></a></p>
-                    <p><a href="../sobre nosotros/sobre_nosotros.html"><u>sobre nosotros</u></a></p>
+                    <p><a href="../sobre nosotros/sobre_nosotros.php"><u>sobre nosotros</u></a></p>
                 </div>
             </div>
             <div class="accordion_item" id="contact_accordion">

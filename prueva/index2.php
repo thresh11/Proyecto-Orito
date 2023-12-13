@@ -119,7 +119,7 @@ if ($id == '' || $token == ''){
 <div class="todo">
 	
     <div class="titulooo">
-        <h1><span> Descripcion </span> de productos</h1>
+        <h1><span> Descripción </span> de productos</h1>
 	</div>
 
     <div class="container-title"><b><?php echo $nombre2;?></b></div>

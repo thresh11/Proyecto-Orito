@@ -552,3 +552,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+function toggleDropdown() {
+    var dropdownContent = document.getElementById("ff");
+    if (dropdownContent.style.display === "none") {
+        dropdownContent.style.display = "block";
+    } else {
+        dropdownContent.style.display = "none";
+    }
+}
+
+
+var iconoMenu = document.querySelector('.icon_menu');
+var contenidoMenuR = document.querySelector('.menuR');
+function menu_despegable(){
+var contenidoMenuR = document.querySelector('.menuR');
+   if (contenidoMenuR.style.display === 'none') {
+       contenidoMenuR.style.display = 'block';
+   } else {
+       contenidoMenuR.style.display = 'none';
+   }
+}
