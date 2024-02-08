@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+     margin: 0 10%;  
+}
+
+.carta{
+    display: flex;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    justify-content: space-between;
+}
+
+/* .carta a{
+    text-decoration: none;
+    background-color: chartreuse;
+    padding: 10px;
+} */
+
+.btn-editar{
+    margin-top: 30px;
+    text-decoration: none;
+    /* background-color: rgb(0, 255, 38);  */
+    background-color: rgb(97, 186, 9);
+    padding: 30px;
+    color: aliceblue;
+}
+
+.products img{
+    width: 100px;
+    height: auto;
+}
+
+.corte{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+/* formulario actualizar */
+
+.body_form_actualizar{
+    background-color: rgb(237,237,237);
+}
+
+
+.form_actualizar{
+    background-color: white;  
+    margin: 10% 40%;
+    padding: 50px 60px;
+    border-radius: 10px;
+}
+
+
+
+.form_actualizar button{
+    background-color: rgb(97, 185, 8);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.form_actualizar input{
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+}

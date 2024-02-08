@@ -250,10 +250,6 @@ $resultado = $sql -> fetchAll(PDO::FETCH_ASSOC);
                         <a href="" data-id="<?php echo $row ['id_producto'];?>" class="btn-agregar-carito">Añadir al carrito</a>                
                 </div>
             <?php  } ?>
-
-
-
-
         </div>
     </section>
 
